@@ -14,15 +14,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-export async function generateMetadata({ params }: { params: { lng: string } }): Promise<Metadata> {
-  const locale = params.lng === "en" ? "en" : "es";
-  return getSeoMetadata(locale);
-}
-
 // Generate static routes for our languages
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
+}
+
+// Generates the metadata for the page
+export async function generateMetadata({ params: paramsFromProps }: { params: { lng: string } }): Promise<Metadata> {
+  const params = await paramsFromProps; // Temporary fix until I figure out what's going on
+  const locale = params.lng === "en" ? "en" : "es";
+  return getSeoMetadata(locale);
 }
 
 export default async function LangLayout({
