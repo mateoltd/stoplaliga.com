@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "common": {
+    "welcome": "Bienvenido a nuestro sitio",
+    "description": "Este es un sitio multilingüe usando Next.js"
+  },
+  "buttons": {
+    "learnMore": "Saber más"
+  }
+} 
