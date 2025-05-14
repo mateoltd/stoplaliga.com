@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { languages, type Language } from "@/dictionaries";
+import { getSeoMetadata } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Stop Now!",
-  description: "Challenging unconstitutional actions against the developer community and freedom of speech.",
-};
+
+export async function generateMetadata({ params }: { params: { lng: string } }): Promise<Metadata> {
+  const locale = params.lng === "en" ? "en" : "es";
+  return getSeoMetadata(locale);
+}
 
 // Generate static routes for our languages
 export async function generateStaticParams() {

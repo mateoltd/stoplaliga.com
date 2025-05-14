@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { defaultLocale } from "../../middleware";
+import { getSeoMetadata } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "StopLaLiga",
-  description: "StopLaLiga application with Next.js",
-};
+export const metadata: Metadata = getSeoMetadata("es");
+
 
 export default async function RootLayout({
   children,
