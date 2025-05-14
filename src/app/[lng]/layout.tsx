@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StopLaLiga",
-  description: "StopLaLiga application with Next.js",
+  title: "Stop Now!",
+  description: "Challenging unconstitutional actions against the developer community and freedom of speech.",
 };
 
 // Generate static routes for our languages
@@ -32,7 +32,7 @@ export default async function LangLayout({
 }) {
   const { lng } = await paramsPromise; // Await and destructure lng
 
-  // This layout is now simpler, root layout handles <html> lang attribute.
+
   // The lng variable is available if needed for other purposes here.
   return <>{children}</>;
 } 
