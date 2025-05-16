@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getDictionary, type Language } from '@/dictionaries';
+import WebsiteGrid from './WebsiteGrid';
 import '@/styles/intro-animation.css';
 
 // Register GSAP plugins
@@ -274,11 +275,17 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
         </div>
       )}
 
-      {/* Animation content will be implemented in Phase 3 */}
-      <div className="h-screen w-full flex items-center justify-center">
-        <h1 className="font-brutalist text-4xl text-center">
+      {/* Scene 1: The Bright, Functional Web */}
+      <div className="scene scene-1 h-screen w-full flex flex-col items-center justify-center py-16 px-4">
+        <h1 className="font-brutalist text-4xl md:text-5xl lg:text-6xl text-center mb-8 text-black">
           {dictionary.animation.title}
         </h1>
+        <p className="font-brutalist-mono text-lg md:text-xl text-center mb-12 text-gray-700 max-w-2xl">
+          {dictionary.animation.subtitle}
+        </p>
+
+        {/* Website Grid */}
+        <WebsiteGrid visible={animationState === AnimationState.LOADING || animationState === AnimationState.INITIAL} />
       </div>
 
       {/* Scroll indicator */}

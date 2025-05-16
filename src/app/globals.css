@@ -28,3 +28,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Brutalist font classes */
+.font-brutalist {
+  font-family: var(--font-archivo-black), sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.font-brutalist-mono {
+  font-family: var(--font-space-mono), monospace;
+  font-weight: 400;
+}
