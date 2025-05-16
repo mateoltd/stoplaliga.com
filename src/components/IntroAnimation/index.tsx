@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getDictionary, type Language } from '@/dictionaries';
+import WebsiteGrid from './WebsiteGrid';
+import SoundEffect from './SoundEffect';
 import '@/styles/intro-animation.css';
 
 // Register GSAP plugins
@@ -42,6 +44,10 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
   // State for animation progression and dictionary
   const [animationState, setAnimationState] = useState<AnimationState>(AnimationState.INITIAL);
   const [dictionary, setDictionary] = useState<any>(null);
+
+  // State for sound effects
+  const [playGavelSound, setPlayGavelSound] = useState(false);
+  const [playGlitchSound, setPlayGlitchSound] = useState(false);
 
   // Load dictionary based on language
   useEffect(() => {
@@ -206,24 +212,163 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
   const startInitialAnimation = () => {
     if (!containerRef.current) return;
 
-    // Animation for initial state will be implemented here
+    // Set initial state
     setAnimationState(AnimationState.INITIAL);
+
+    // Create a timeline for the initial animation
+    const initialTimeline = gsap.timeline({
+      onComplete: () => {
+        // After the initial animation completes, we're ready for scroll-based progression
+        console.log('Initial animation complete');
+      }
+    });
+
+    // Animate the background to white (bright web)
+    initialTimeline.to(containerRef.current, {
+      backgroundColor: '#ffffff',
+      duration: 1.5,
+      ease: 'power2.inOut'
+    });
+
+    // Animate text color to black
+    initialTimeline.to('.scene-1 h1, .scene-1 p', {
+      color: '#000000',
+      duration: 1,
+      ease: 'power2.inOut'
+    }, '-=1');
+
+    // Add subtle animations to the website grid
+    initialTimeline.to('.website-item', {
+      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+      duration: 1,
+      stagger: 0.05,
+      ease: 'power2.inOut'
+    }, '-=0.5');
+
+    // Store the timeline for cleanup
+    if (timelineRef.current) {
+      timelineRef.current.add(initialTimeline);
+    }
   };
 
   // Trigger gavel slam animation
   const triggerGavelSlam = (nextState: AnimationState) => {
     if (!containerRef.current) return;
 
-    // Animation for gavel slam will be implemented here
+    // Set the next animation state
     setAnimationState(nextState);
+
+    // Play gavel sound effect
+    setPlayGavelSound(true);
+
+    // Create a timeline for the gavel slam animation
+    const gavelTimeline = gsap.timeline();
+
+    // Determine which websites to affect based on the state
+    let websitesToAffect: string[] = [];
+    let intensity = 0;
+
+    switch (nextState) {
+      case AnimationState.FIRST_GAVEL:
+        // First gavel affects a few websites
+        websitesToAffect = ['youtube', 'facebook', 'twitch'];
+        intensity = 0.3;
+        break;
+      case AnimationState.SECOND_GAVEL:
+        // Second gavel affects more websites
+        websitesToAffect = ['youtube', 'facebook', 'twitch', 'tiktok', 'instagram'];
+        intensity = 0.6;
+        break;
+      case AnimationState.THIRD_GAVEL:
+        // Third gavel affects almost all websites
+        websitesToAffect = ['youtube', 'facebook', 'twitch', 'tiktok', 'instagram', 'netflix', 'spotify', 'reddit'];
+        intensity = 0.9;
+        break;
+    }
+
+    // Shake the screen effect
+    gavelTimeline.to(containerRef.current, {
+      x: 10,
+      duration: 0.1,
+      repeat: 3,
+      yoyo: true,
+      ease: 'power2.inOut'
+    });
+
+    // Affect the selected websites
+    websitesToAffect.forEach(websiteId => {
+      const websiteElement = document.querySelector(`[data-website-id="${websiteId}"]`);
+      if (websiteElement) {
+        // Add glitch effect to the affected websites
+        gavelTimeline.to(websiteElement, {
+          opacity: 0.5,
+          filter: `grayscale(${intensity})`,
+          boxShadow: '0 0 10px rgba(255, 0, 0, 0.5)',
+          duration: 0.5,
+          ease: 'power2.inOut'
+        }, '-=0.4');
+      }
+    });
+
+    // Store the timeline for cleanup
+    if (timelineRef.current) {
+      timelineRef.current.add(gavelTimeline);
+    }
   };
 
   // Trigger final scene animation
   const triggerFinalScene = () => {
     if (!containerRef.current) return;
 
-    // Animation for final scene will be implemented here
+    // Set the final animation state
     setAnimationState(AnimationState.FINAL);
+
+    // Play glitch sound effect
+    setPlayGlitchSound(true);
+
+    // Create a timeline for the final scene animation
+    const finalTimeline = gsap.timeline();
+
+    // Fade out all websites
+    finalTimeline.to('.website-item', {
+      opacity: 0,
+      y: -20,
+      stagger: 0.05,
+      duration: 0.5,
+      ease: 'power2.inOut'
+    });
+
+    // Show final message
+    finalTimeline.to('.scene-1 h1', {
+      text: dictionary.animation.finalMessage,
+      duration: 2,
+      ease: 'none'
+    }, '-=0.5');
+
+    // Show final subtitle
+    finalTimeline.to('.scene-1 p', {
+      text: dictionary.animation.finalSubtitle,
+      duration: 1.5,
+      ease: 'none'
+    }, '-=1.5');
+
+    // Add a continue button
+    const continueButton = document.createElement('button');
+    continueButton.className = 'px-8 py-4 bg-red-600 text-white font-brutalist text-xl hover:bg-red-700 transition-colors mt-8';
+    continueButton.textContent = dictionary.animation.continueToSite;
+    continueButton.onclick = skipAnimation;
+
+    finalTimeline.call(() => {
+      const sceneElement = document.querySelector('.scene-1');
+      if (sceneElement) {
+        sceneElement.appendChild(continueButton);
+      }
+    });
+
+    // Store the timeline for cleanup
+    if (timelineRef.current) {
+      timelineRef.current.add(finalTimeline);
+    }
   };
 
   // Skip animation (for development or accessibility)
@@ -274,11 +419,20 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
         </div>
       )}
 
-      {/* Animation content will be implemented in Phase 3 */}
-      <div className="h-screen w-full flex items-center justify-center">
-        <h1 className="font-brutalist text-4xl text-center">
+      {/* Scene 1: The Bright, Functional Web */}
+      <div className="scene scene-1 h-screen w-full flex flex-col items-center justify-center">
+        <h1 className="font-brutalist text-4xl text-center mb-8">
           {dictionary.animation.title}
         </h1>
+        <p className="font-brutalist-mono text-lg text-center mb-12 max-w-xl">
+          {dictionary.animation.subtitle}
+        </p>
+
+        {/* Website Grid */}
+        <WebsiteGrid
+          visible={animationState === AnimationState.LOADING ||
+                  animationState === AnimationState.INITIAL}
+        />
       </div>
 
       {/* Scroll indicator */}
@@ -293,6 +447,18 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
       <div className="fixed bottom-4 left-4 bg-black/80 p-2 text-xs font-brutalist-mono">
         State: {animationState}
       </div>
+
+      {/* Sound effects */}
+      <SoundEffect
+        src="/sounds/gavel.mp3"
+        play={playGavelSound}
+        onEnded={() => setPlayGavelSound(false)}
+      />
+      <SoundEffect
+        src="/sounds/glitch.mp3"
+        play={playGlitchSound}
+        onEnded={() => setPlayGlitchSound(false)}
+      />
     </div>
   );
 };
