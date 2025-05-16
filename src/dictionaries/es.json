@@ -10,5 +10,26 @@
   },
   "buttons": {
     "learnMore": "Saber más"
+  },
+  "animation": {
+    "startTitle": "Censura de Internet en España",
+    "startDescription": "Experimenta cómo LaLiga está censurando progresivamente internet en España. Haz clic para comenzar el recorrido.",
+    "startButton": "Comenzar Experiencia",
+    "title": "Censura de Internet",
+    "subtitle": "LaLiga está censurando internet en España",
+    "dnsError": "DNS_PROBE_FINISHED_NXDOMAIN",
+    "dnsErrorMessage": "Este sitio web ha sido bloqueado por LaLiga",
+    "censored": "CENSURADO",
+    "websiteBlocked": "Sitio web bloqueado",
+    "accessDenied": "Acceso denegado por orden de LaLiga",
+    "judicialOrder": "Orden judicial de 2022",
+    "gavelSlam": "Golpe de martillo",
+    "censorshipProgress": "Censura en progreso",
+    "websitesDisappearing": "Sitios web desapareciendo",
+    "usersFleeing": "Usuarios huyendo",
+    "internetDarkening": "Internet oscureciéndose",
+    "finalMessage": "El internet de España está bajo ataque",
+    "finalSubtitle": "LaLiga contra la Libertad de Internet",
+    "continueToSite": "Continuar al sitio"
   }
-} 
+}

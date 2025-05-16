@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+  <!-- Set of different particle shapes for the digital ash effect -->
+  
+  <!-- Square particle -->
+  <rect x="0" y="0" width="2" height="2" fill="#888888" />
+  
+  <!-- Rectangle particle -->
+  <rect x="3" y="0" width="3" height="1" fill="#666666" />
+  
+  <!-- Circle particle -->
+  <circle cx="8" cy="1" r="1" fill="#999999" />
+  
+  <!-- Triangle particle -->
+  <polygon points="1,4 2,6 0,6" fill="#777777" />
+  
+  <!-- Small dot particle -->
+  <circle cx="4" cy="5" r="0.5" fill="#AAAAAA" />
+  
+  <!-- Irregular shape particle -->
+  <path d="M7,4 L9,4 L8,6 L6,5 Z" fill="#555555" />
+  
+  <!-- Line particle -->
+  <line x1="0" y1="8" x2="2" y2="9" stroke="#BBBBBB" stroke-width="0.5" />
+  
+  <!-- Plus particle -->
+  <path d="M8,7 L8,9 M7,8 L9,8" stroke="#CCCCCC" stroke-width="0.5" />
+</svg>

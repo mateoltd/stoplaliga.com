@@ -10,5 +10,26 @@
   },
   "buttons": {
     "learnMore": "Learn More"
+  },
+  "animation": {
+    "startTitle": "Internet Censorship in Spain",
+    "startDescription": "Experience how LaLiga is progressively censoring the internet in Spain. Click to begin the journey.",
+    "startButton": "Begin Experience",
+    "title": "Internet Censorship",
+    "subtitle": "LaLiga is censoring the internet in Spain",
+    "dnsError": "DNS_PROBE_FINISHED_NXDOMAIN",
+    "dnsErrorMessage": "This website has been blocked by LaLiga",
+    "censored": "CENSORED",
+    "websiteBlocked": "Website blocked",
+    "accessDenied": "Access denied by order of LaLiga",
+    "judicialOrder": "Judicial order from 2022",
+    "gavelSlam": "Gavel slam",
+    "censorshipProgress": "Censorship in progress",
+    "websitesDisappearing": "Websites disappearing",
+    "usersFleeing": "Users fleeing",
+    "internetDarkening": "Internet darkening",
+    "finalMessage": "Spain's internet is under attack",
+    "finalSubtitle": "LaLiga vs. Internet Freedom",
+    "continueToSite": "Continue to site"
   }
-} 
+}

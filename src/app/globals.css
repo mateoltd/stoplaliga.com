@@ -10,6 +10,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brutalist fonts for animation */
+  --font-brutalist: var(--font-archivo-black, var(--font-sans));
+  --font-brutalist-mono: var(--font-space-mono, var(--font-mono));
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Evil Glow Filter Definition -->
+  <defs>
+    <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feFlood flood-color="#ff0000" flood-opacity="0.7" result="coloredBlur" />
+      <feComposite in="coloredBlur" in2="blur" operator="in" result="coloredBlurAlpha" />
+      <feMerge>
+        <feMergeNode in="coloredBlurAlpha" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ICON with evil glow applied -->
+  <g id="icon" transform="translate(0,4)" filter="url(#redGlow)">
+    <!-- This is a placeholder path - the actual path would be copied from the original LaLigant.svg -->
+    <path d="M50,20 L150,20 L150,80 L50,80 Z" fill="#ff4b44"/>
+  </g>
+
+  <!-- WORDMARK "LaLigan't" with evil glow -->
+  <text x="68%" y="78"
+        font-family="system-ui"
+        font-weight="700"
+        font-size="68"
+        fill="#ff4b44"
+        filter="url(#redGlow)"
+        letter-spacing="-1">
+    n't
+  </text>
+
+  <!-- rider line -->
+  <text x="233" y="105"
+        font-family="notdeserved"
+        font-size="16"
+        font-style="italic"
+        fill="#ff4b44">
+    *for copyright reasons*
+  </text>
+</svg>

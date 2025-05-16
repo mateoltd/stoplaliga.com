@@ -1,6 +1,5 @@
-// Define the supported languages
-export const languages = ['es', 'en'] as const;
-export type Language = (typeof languages)[number];
+import 'server-only';
+import { languages, type Language } from './index';
 
 // Define the dictionaries
 const dictionaries = {
@@ -23,10 +22,14 @@ const fallbackDictionary = {
   }
 };
 
-export const getDictionary = async (locale: Language) => {
+/**
+ * Get dictionary for server components
+ * This function is meant to be used only in server components
+ */
+export const getServerDictionary = async (locale: Language) => {
   // Ensure locale is a valid language
   const validLocale = languages.includes(locale) ? locale : 'en';
-
+  
   try {
     // Safely access the dictionary function
     const dictionaryFn = dictionaries[validLocale];

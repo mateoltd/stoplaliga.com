@@ -1,11 +1,12 @@
-import { getDictionary, type Language } from "@/dictionaries";
+import { type Language } from "@/dictionaries";
+import { getServerDictionary } from "@/dictionaries/server";
 import Link from "next/link";
 
 export default async function Home(props: {
   params: Promise<{ lng: Language }>
 }) {
   const { lng } = await props.params;
-  const dict = await getDictionary(lng);
+  const dict = await getServerDictionary(lng);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -15,7 +16,7 @@ export default async function Home(props: {
             <Link href={`/${lng}`}>{dict.nav.home}</Link>
             <Link href={`/${lng}/about`}>{dict.nav.about}</Link>
             <Link href={`/${lng}/contact`}>{dict.nav.contact}</Link>
-            
+
             {/* Language switcher */}
             <div className="flex gap-2 ml-6">
               <Link href="/es" className={lng === 'es' ? 'font-bold' : ''}>
@@ -42,4 +43,4 @@ export default async function Home(props: {
       </div>
     </main>
   );
-} 
+}
