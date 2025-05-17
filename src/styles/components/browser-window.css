@@ -1,0 +1,62 @@
+/* Browser Window Styles */
+.browser-window {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
+  z-index: 20;
+}
+
+.browser-ui {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px;
+}
+
+.browser-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.browser-tab {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 0;
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+
+.browser-tab.active {
+  background-color: #ffffff;
+  border-bottom: none;
+}
+
+.browser-tab.inactive {
+  background-color: #f0f0f0;
+  opacity: 0.7;
+}
+
+.browser-address-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+}
+
+.browser-content {
+  padding: 24px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

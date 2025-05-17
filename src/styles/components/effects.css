@@ -1,0 +1,131 @@
+/* Glitch Text Effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+.glitch-text {
+  animation: glitch 1s linear infinite;
+  position: relative;
+}
+
+/* DNS Error Message */
+.dns-error {
+  background-color: #000000;
+  border: 2px solid #ff4b44;
+  padding: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.dns-error-heading {
+  color: #ff4b44;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dns-error-message {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+/* Scroll Indicators */
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.intro-animation[data-animation-state="loading"] .scroll-indicator,
+.intro-animation[data-animation-state="first_gavel"] .scroll-indicator,
+.intro-animation[data-animation-state="second_gavel"] .scroll-indicator,
+.intro-animation[data-animation-state="third_gavel"] .scroll-indicator {
+  opacity: 1;
+}
+
+.scroll-indicator-text {
+  font-family: var(--font-brutalist-mono, monospace);
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.scroll-indicator-arrow {
+  width: 30px;
+  height: 30px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg);
+  animation: scroll-arrow-bounce 2s infinite;
+}
+
+@keyframes scroll-arrow-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  40% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  60% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .intro-animation {
+    scroll-behavior: auto;
+  }
+
+  .glitch-text {
+    animation: none;
+  }
+
+  .website-item.clickable {
+    animation: none;
+  }
+
+  .scroll-indicator-arrow {
+    animation: none;
+  }
+}

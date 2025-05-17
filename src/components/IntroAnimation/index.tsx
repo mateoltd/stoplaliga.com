@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getDictionary, type Language } from '@/dictionaries';
-import WebsiteGrid from './WebsiteGrid';
+import WebsiteGrid, { Website, websites } from './WebsiteGrid';
+import IntroMessage from './IntroMessage';
+import BrowserWindow from './BrowserWindow';
 import '@/styles/intro-animation.css';
 
 // Register GSAP plugins
@@ -16,7 +18,10 @@ if (typeof window !== 'undefined') {
 enum AnimationState {
   INITIAL = 'initial',
   WAITING_FOR_INTERACTION = 'waiting_for_interaction',
+  INTRO_MESSAGE = 'intro_message',
   LOADING = 'loading',
+  WEBSITE_GRID = 'website_grid',
+  BROWSER_WINDOW = 'browser_window',
   FIRST_GAVEL = 'first_gavel',
   SECOND_GAVEL = 'second_gavel',
   THIRD_GAVEL = 'third_gavel',
@@ -43,6 +48,12 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
   // State for animation progression and dictionary
   const [animationState, setAnimationState] = useState<AnimationState>(AnimationState.INITIAL);
   const [dictionary, setDictionary] = useState<any>(null);
+  const [selectedWebsite, setSelectedWebsite] = useState<Website | null>(null);
+  const [showIntroMessage, setShowIntroMessage] = useState(false);
+  const [showWebsiteGrid, setShowWebsiteGrid] = useState(false);
+  const [showBrowserWindow, setShowBrowserWindow] = useState(false);
+  const [fadeOutGrid, setFadeOutGrid] = useState(false);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
   // Load dictionary based on language
   useEffect(() => {
@@ -102,17 +113,54 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
   const startAnimation = () => {
     if (animationState !== AnimationState.WAITING_FOR_INTERACTION) return;
 
-    // Set loading state
-    setAnimationState(AnimationState.LOADING);
+    // Show intro message first
+    setAnimationState(AnimationState.INTRO_MESSAGE);
+    setShowIntroMessage(true);
 
-    // Setup scroll triggers for animation progression
-    setupScrollTriggers();
+    // Lock scrolling during intro
+    document.body.style.overflow = 'hidden';
+  };
 
-    // Start initial animation
-    startInitialAnimation();
+  // Handle intro message completion
+  const handleIntroMessageComplete = () => {
+    // Transition to website grid with a slight delay
+    // This allows the intro message to move to the top position first
+    setTimeout(() => {
+      setAnimationState(AnimationState.WEBSITE_GRID);
+      setShowWebsiteGrid(true);
 
-    // Enable scrolling for animation progression
-    document.body.style.overflow = 'auto';
+      // Setup scroll triggers for later animation progression
+      setupScrollTriggers();
+
+      // Enable scrolling for animation progression
+      document.body.style.overflow = 'auto';
+
+      // After a delay, hide the intro message
+      setTimeout(() => {
+        setShowIntroMessage(false);
+      }, 1000);
+    }, 1000);
+  };
+
+  // Handle message change
+  const handleMessageChange = (index: number) => {
+    setCurrentMessageIndex(index);
+  };
+
+  // Handle website click
+  const handleWebsiteClick = (website: Website) => {
+    // Set the selected website
+    setSelectedWebsite(website);
+
+    // Fade out the grid
+    setFadeOutGrid(true);
+
+    // After a short delay, show the browser window
+    setTimeout(() => {
+      setShowWebsiteGrid(false);
+      setAnimationState(AnimationState.BROWSER_WINDOW);
+      setShowBrowserWindow(true);
+    }, 500);
   };
 
   // Setup scroll triggers for animation progression
@@ -275,17 +323,46 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
         </div>
       )}
 
+      {/* Intro Message */}
+      <IntroMessage
+        messages={dictionary.animation.storyMessages}
+        currentMessageIndex={currentMessageIndex}
+        visible={showIntroMessage}
+        onComplete={handleIntroMessageComplete}
+        onMessageChange={handleMessageChange}
+        finalPosition="top"
+        timelineLabel={dictionary.animation.timelineProgress}
+      />
+
       {/* Scene 1: The Bright, Functional Web */}
       <div className="scene scene-1 h-screen w-full flex flex-col items-center justify-center py-16 px-4">
-        <h1 className="font-brutalist text-4xl md:text-5xl lg:text-6xl text-center mb-8 text-black">
-          {dictionary.animation.title}
-        </h1>
-        <p className="font-brutalist-mono text-lg md:text-xl text-center mb-12 text-gray-700 max-w-2xl">
-          {dictionary.animation.subtitle}
-        </p>
+        {/* Title and subtitle - fixed at the top on mobile */}
+        <div className="fixed top-0 left-0 w-full bg-white bg-opacity-95 p-4 md:relative md:bg-transparent md:p-0 z-20 border-b border-gray-200 md:border-0">
+          <h1 className="font-brutalist text-2xl md:text-4xl lg:text-5xl text-center mb-2 md:mb-8 text-black title-container">
+            {dictionary.animation.storyMessages[dictionary.animation.storyMessages.length - 1]}
+          </h1>
+          <p className="font-brutalist-mono text-sm md:text-lg lg:text-xl text-center mb-4 md:mb-12 text-gray-700 max-w-2xl mx-auto">
+            {dictionary.animation.subtitle}
+          </p>
+        </div>
 
         {/* Website Grid */}
-        <WebsiteGrid visible={animationState === AnimationState.LOADING || animationState === AnimationState.INITIAL} />
+        <div className="mt-24 md:mt-0 w-full">
+          <WebsiteGrid
+            visible={showWebsiteGrid}
+            onWebsiteClick={handleWebsiteClick}
+            fadeOut={fadeOutGrid}
+            clickInstructionText={dictionary.animation.clickWebsite}
+          />
+        </div>
+
+        {/* Browser Window */}
+        {selectedWebsite && (
+          <BrowserWindow
+            website={selectedWebsite}
+            visible={showBrowserWindow}
+          />
+        )}
       </div>
 
       {/* Scroll indicator */}

@@ -30,6 +30,16 @@
     "internetDarkening": "Internet oscureciéndose",
     "finalMessage": "El internet de España está bajo ataque",
     "finalSubtitle": "LaLiga contra la Libertad de Internet",
-    "continueToSite": "Continuar al sitio"
+    "continueToSite": "Continuar al sitio",
+    "storyMessages": [
+      "Érase una vez...",
+      "Internet era libre y abierto",
+      "La gente podía acceder a cualquier sitio web que quisiera",
+      "Pero entonces llegó LaLiga",
+      "Y lograron salirse con la suya censurándolo",
+      "Censura de Internet"
+    ],
+    "clickWebsite": "Haz clic en un sitio web para continuar",
+    "timelineProgress": "Progreso de la historia"
   }
 }

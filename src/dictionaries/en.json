@@ -30,6 +30,16 @@
     "internetDarkening": "Internet darkening",
     "finalMessage": "Spain's internet is under attack",
     "finalSubtitle": "LaLiga vs. Internet Freedom",
-    "continueToSite": "Continue to site"
+    "continueToSite": "Continue to site",
+    "storyMessages": [
+      "Once upon a time...",
+      "The internet was free and open",
+      "People could access any website they wanted",
+      "But then LaLiga came along",
+      "And they managed to get away with censoring it",
+      "Internet Censorship"
+    ],
+    "clickWebsite": "Click on a website to continue",
+    "timelineProgress": "Story progress"
   }
 }

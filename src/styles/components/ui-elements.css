@@ -1,0 +1,117 @@
+/* UI Elements */
+
+/* Skip Button */
+.skip-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ff4b44;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  z-index: 100;
+  font-family: var(--font-brutalist-mono, monospace);
+  border-radius: 2px;
+}
+
+.skip-button:hover {
+  background-color: #e03e38;
+}
+
+/* Debug information */
+.debug-info {
+  position: fixed;
+  bottom: 4px;
+  left: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-brutalist-mono, monospace);
+  color: #ffffff;
+  z-index: 100;
+  border-radius: 2px;
+}
+
+/* Section markers */
+.section-marker {
+  position: fixed;
+  right: 1rem;
+  z-index: 50;
+  padding: 0.5rem 1rem;
+  background-color: #ff4b44;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-family: var(--font-brutalist-mono, monospace);
+  opacity: 0.7;
+  transition: opacity 0.3s ease, font-weight 0.3s ease;
+  border-radius: 2px;
+}
+
+.section-marker.active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Start screen */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  z-index: 40;
+  padding: 1rem;
+}
+
+.start-screen-title {
+  font-family: var(--font-brutalist, sans-serif);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.start-screen-description {
+  font-family: var(--font-brutalist-mono, monospace);
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #cccccc;
+  max-width: 36rem;
+}
+
+.start-button {
+  padding: 1rem 2rem;
+  background-color: #ff4b44;
+  color: #ffffff;
+  font-family: var(--font-brutalist, sans-serif);
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #e03e38;
+}
+
+@media (min-width: 768px) {
+  .start-screen-title {
+    font-size: 3.5rem;
+  }
+  
+  .start-screen-description {
+    font-size: 1.25rem;
+  }
+  
+  .start-button {
+    font-size: 1.5rem;
+  }
+}
