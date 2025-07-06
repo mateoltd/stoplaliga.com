@@ -8,4 +8,11 @@ const dictionaries = {
   en: () => import('./en.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Language) => dictionaries[locale]();
+export const getDictionary = async (locale: Language) => {
+  try {
+    return await dictionaries[locale]();
+  } catch (error) {
+    console.error(`Error loading dictionary for locale "${locale}":`, error);
+    throw new Error(`Could not load dictionary for locale: ${locale}`);
+  }
+};
