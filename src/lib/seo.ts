@@ -9,9 +9,9 @@ interface MetadataConfig {
 
 export const metadataByLocale: Record<Locale, MetadataConfig> = {
   es: {
-    title: "Stop LaLiga - Contra la censura en Internet",
+    title: "StopLaLiga - Contra la censura en Internet",
     description:
-      "LaLiga está bloqueando webs legítimas e infraestructuras críticas en España con la excusa de la piratería. Denuncia la censura.",
+      "LaLiga está bloqueando webs legítimas e infraestructuras críticas en España con la excusa de la piratería. Únete a la resistencia.",
     locale: "es_ES",
     keywords: [
       "laliga",
@@ -24,10 +24,17 @@ export const metadataByLocale: Record<Locale, MetadataConfig> = {
       "cloudflare",
       "netlify",
       "piratería",
+      "laliga bloqueo",
+      "laliga censura",
+      "laliga internet",
+      "laliga piratería",
+      "laliga censura internet",
+      "laliga censura en internet",
+      "laliga censura en españa",
     ],
   },
   en: {
-    title: "Stop LaLiga - Fight Internet Censorship in Spain",
+    title: "StopLaLiga - Fight Internet Censorship in Spain",
     description:
       "LaLiga is blocking legitimate websites and critical infrastructure in Spain due to overreaching anti-piracy efforts. Join the resistance.",
     locale: "en_US",
@@ -42,6 +49,13 @@ export const metadataByLocale: Record<Locale, MetadataConfig> = {
       "cloudflare",
       "netlify",
       "freedom of speech",
+      "laliga blocking",
+      "laliga censorship",
+      "laliga internet",
+      "laliga piracy",
+      "laliga censorship internet",
+      "laliga censorship in internet",
+      "laliga censorship in spain",
     ],
   },
 };
@@ -62,7 +76,7 @@ export function getSeoMetadata(locale: Locale) {
       title: meta.title,
       description: meta.description,
       locale: meta.locale,
-      siteName: "Stop LaLiga",
+      siteName: "StopLaLiga",
       url: "https://stoplaliga.com",
       type: "website",
       images: [
@@ -70,7 +84,7 @@ export function getSeoMetadata(locale: Locale) {
           url: "https://stoplaliga.com/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "Stop LaLiga - Internet Blocked",
+          alt: "StopLaLiga - Internet Blocked",
         },
       ],
     },
