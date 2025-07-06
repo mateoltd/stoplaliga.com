@@ -6,8 +6,6 @@
     "sourcesLink": "Sources"
   },
   "common": {
-    "welcome": "Welcome to our site",
-    "description": "This is a multilingual site using Next.js"
   },
   "buttons": {
     "learnMore": "Learn More"
@@ -15,7 +13,7 @@
   "timeline": {
     "title": "LaLiga and Internet Blocking in Spain",
     "subtitle": "A timeline of events and their impact on digital infrastructure",
-    "warning": "This is a documented case study. Legal precedents established may influence future digital policy decisions in the EU.",
+    "warning": "This is a documented case study. Precedents established may influence future digital policy decisions in the EU. We must not allow this kind of censorship to become widespread.",
     "events": {
       "2024-12-18": {
         "title": "LaLiga Gets Legal Approval to Block Websites",
