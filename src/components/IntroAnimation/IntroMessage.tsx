@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import VisualNarration from './VisualNarration';
+import { getSceneByMessage } from './narrationScenes';
 
 interface IntroMessageProps {
   messages: string[];
@@ -11,6 +13,7 @@ interface IntroMessageProps {
   onMessageChange?: (index: number) => void;
   finalPosition?: 'top' | 'center';
   timelineLabel?: string;
+  disableVisualNarration?: boolean;
 }
 
 /**
@@ -25,11 +28,22 @@ const IntroMessage: React.FC<IntroMessageProps> = ({
   onComplete,
   onMessageChange,
   finalPosition = 'center',
-  timelineLabel
+  timelineLabel,
+  disableVisualNarration = false
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const messageRef = useRef<HTMLDivElement>(null);
   const prevMessageIndex = useRef<number>(currentMessageIndex);
+  const [currentScene, setCurrentScene] = useState(
+    getSceneByMessage(messages[currentMessageIndex] || '')
+  );
+
+  // Update current scene when message changes
+  useEffect(() => {
+    if (visible && messages[currentMessageIndex]) {
+      setCurrentScene(getSceneByMessage(messages[currentMessageIndex]));
+    }
+  }, [visible, messages, currentMessageIndex]);
 
   // Handle message transitions
   useEffect(() => {
@@ -131,6 +145,13 @@ const IntroMessage: React.FC<IntroMessageProps> = ({
       className={`intro-message ${finalPosition === 'top' ? 'transition-ready' : ''}`}
       aria-label="Story message"
     >
+      {/* Visual Narration */}
+      <VisualNarration
+        scene={currentScene}
+        visible={visible}
+        disabled={disableVisualNarration}
+      />
+
       <div
         ref={messageRef}
         className="message-container"

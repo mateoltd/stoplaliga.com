@@ -2,9 +2,6 @@
 
 /* Skip Button */
 .skip-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   background-color: #ff4b44;
   color: #ffffff;
   border: none;
@@ -18,6 +15,33 @@
 
 .skip-button:hover {
   background-color: #e03e38;
+}
+
+/* Toggle Button */
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #444444;
+}
+
+.toggle-button.enabled {
+  background-color: #333333;
+}
+
+.toggle-button.disabled {
+  background-color: #666666;
 }
 
 /* Debug information */
@@ -106,11 +130,11 @@
   .start-screen-title {
     font-size: 3.5rem;
   }
-  
+
   .start-screen-description {
     font-size: 1.25rem;
   }
-  
+
   .start-button {
     font-size: 1.5rem;
   }

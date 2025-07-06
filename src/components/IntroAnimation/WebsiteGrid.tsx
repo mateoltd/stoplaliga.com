@@ -78,17 +78,36 @@ const WebsiteGrid: React.FC<WebsiteGridProps> = ({
       }
     );
 
-    // Add clickable class to the first item after a delay to draw attention
-    setTimeout(() => {
-      const firstItem = document.querySelector('.website-item');
-      if (firstItem) {
-        firstItem.classList.add('clickable');
+    // Setup random pulse animations for website items with minimum 5s between animations
+    const items = document.querySelectorAll('.website-item');
+    const animateRandomItem = () => {
+      // Get a random item
+      const randomIndex = Math.floor(Math.random() * items.length);
+      const randomItem = items[randomIndex];
+
+      if (randomItem && randomItem instanceof HTMLElement) {
+        // Add clickable class to create pulse animation
+        randomItem.classList.add('clickable');
+
+        // Remove the class after 2 seconds
+        setTimeout(() => {
+          randomItem.classList.remove('clickable');
+
+          // Schedule next animation after a random delay (minimum 5s)
+          const nextDelay = Math.random() * 3000 + 5000; // 5-8 seconds
+          setTimeout(animateRandomItem, nextDelay);
+        }, 2000);
       }
-    }, 1000);
+    };
+
+    // Start the random animations after initial load
+    const initialDelay = 3000; // 3 seconds after grid appears
+    const animationTimeout = setTimeout(animateRandomItem, initialDelay);
 
     // Cleanup function
     return () => {
       tl.kill();
+      clearTimeout(animationTimeout);
       const items = document.querySelectorAll('.website-item');
       items.forEach(item => {
         if (item instanceof HTMLElement) {

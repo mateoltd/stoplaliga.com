@@ -54,6 +54,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
   const [showBrowserWindow, setShowBrowserWindow] = useState(false);
   const [fadeOutGrid, setFadeOutGrid] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [disableVisualNarration, setDisableVisualNarration] = useState(false);
 
   // Load dictionary based on language
   useEffect(() => {
@@ -296,13 +297,36 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
       data-animation-state={animationState}
     >
       {/* Skip button for accessibility */}
-      <button
-        onClick={skipAnimation}
-        className="absolute top-4 right-4 z-50 px-4 py-2 bg-red-600 text-white rounded-sm font-brutalist-mono text-sm"
-        aria-label="Skip animation"
-      >
-        {lng === 'es' ? 'Saltar animación' : 'Skip animation'}
-      </button>
+      {/* Control buttons */}
+      <div className="absolute top-4 right-4 z-50 flex space-x-2">
+        {/* Toggle visual narration button */}
+        <button
+          className={`toggle-button ${disableVisualNarration ? 'disabled' : 'enabled'}`}
+          onClick={() => setDisableVisualNarration(!disableVisualNarration)}
+          aria-label={disableVisualNarration ? "Enable visual effects" : "Disable visual effects"}
+          title={disableVisualNarration ? "Enable visual effects" : "Disable visual effects"}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {disableVisualNarration ? (
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z M12 9a3 3 0 0 1 0 6 3 3 0 0 1 0-6z" />
+            ) : (
+              <>
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <path d="M2 2l20 20" />
+              </>
+            )}
+          </svg>
+        </button>
+
+        {/* Skip button */}
+        <button
+          onClick={skipAnimation}
+          className="skip-button"
+          aria-label="Skip animation"
+        >
+          {lng === 'es' ? 'Saltar animación' : 'Skip animation'}
+        </button>
+      </div>
 
       {/* Initial interaction trigger */}
       {animationState === AnimationState.WAITING_FOR_INTERACTION && (
@@ -332,6 +356,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ lng, onComplete }) => {
         onMessageChange={handleMessageChange}
         finalPosition="top"
         timelineLabel={dictionary.animation.timelineProgress}
+        disableVisualNarration={disableVisualNarration}
       />
 
       {/* Scene 1: The Bright, Functional Web */}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Sparkles</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M20,50 L30,50" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M25,45 L25,55" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M70,30 L80,30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M75,25 L75,35" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M60,70 L70,70" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M65,65 L65,75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M40,20 L50,20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M45,15 L45,25" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M80,60 L90,60" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M85,55 L85,65" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+    </g>
+</svg>

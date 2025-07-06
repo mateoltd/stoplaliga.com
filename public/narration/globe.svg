@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Globe</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#FFFFFF" stroke-width="2" cx="50" cy="50" r="40"></circle>
+        <path d="M20,50 L80,50" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M25,30 L75,30" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M25,70 L75,70" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M50,10 L50,90" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M30,20 C40,40 60,40 70,20" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M30,80 C40,60 60,60 70,80" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"></path>
+    </g>
+</svg>
