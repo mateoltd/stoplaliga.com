@@ -2,7 +2,8 @@
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "sourcesLink": "Fuentes"
   },
   "common": {
     "welcome": "Bienvenido a nuestro sitio",

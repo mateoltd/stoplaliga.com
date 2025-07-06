@@ -1,0 +1,57 @@
+{
+  "title": {
+    "en": "Sources & Further Reading",
+    "es": "Fuentes y lecturas adicionales"
+  },
+  "subtitle": {
+    "en": "The information presented in this timeline is based on the following reports and articles.",
+    "es": "La información presentada en esta cronología se basa en los siguientes informes y artículos."
+  },
+  "entries": [
+    {
+      "publisher": "Digital TV Europe",
+      "date": "2024-12-18",
+      "url": "https://www.digitaltveurope.com/2024/01/18/laliga-wins-legal-backing-to-ask-operators-to-block-pirate-iptv-services/",
+      "title": {
+        "en": "LaLiga wins legal backing to ask operators to block pirate IPTV services",
+        "es": "LaLiga obtiene respaldo legal para pedir a los operadores que bloqueen los servicios de IPTV piratas"
+      }
+    },
+    {
+      "publisher": "The Verge",
+      "date": "2025-02-19",
+      "url": "https://www.theverge.com/2025/02/19/24328136/spain-la-liga-cloudflare-vervel-ip-address-blocking",
+      "title": {
+        "en": "Cloudflare and Vercel services blocked in Spain after LaLiga wins court order",
+        "es": "Servicios de Cloudflare y Vercel bloqueados en España tras la orden judicial de LaLiga"
+      }
+    },
+    {
+      "publisher": "The Verge",
+      "date": "2025-05-20",
+      "url": "https://www.theverge.com/2025/5/20/24338989/la-liga-spain-cloudflare-twitch-ip-address-blocking",
+      "title": {
+        "en": "LaLiga's 'bonkers' anti-piracy blocking is breaking the internet in Spain",
+        "es": "El 'disparatado' bloqueo antipiratería de LaLiga está colapsando internet en España"
+      }
+    },
+    {
+      "publisher": "Reuters",
+      "date": "2025-05-21",
+      "url": "https://www.reuters.com/technology/cybersecurity/cloudflare-ceo-warns-spains-anti-piracy-law-could-cost-lives-2025-05-21/",
+      "title": {
+        "en": "Cloudflare CEO warns Spain's anti-piracy law could 'cost lives'",
+        "es": "El CEO de Cloudflare advierte que la ley antipiratería de España podría 'costar vidas'"
+      }
+    },
+    {
+      "publisher": "TechCrunch",
+      "date": "2025-05-22",
+      "url": "https://techcrunch.com/2025/05/22/how-laligas-anti-piracy-crusade-is-disrupting-the-internet-for-everyone/",
+      "title": {
+        "en": "How LaLiga's anti-piracy crusade is disrupting the internet for everyone",
+        "es": "Cómo la cruzada antipiratería de LaLiga está afectando a internet para todos"
+      }
+    }
+  ]
+} 

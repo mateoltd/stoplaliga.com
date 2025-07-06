@@ -8,9 +8,28 @@ const dictionaries = {
   en: () => import('./en.json').then((module) => module.default),
 };
 
+const sources = () => import('./sources.json').then((module) => module.default);
+
 export const getDictionary = async (locale: Language) => {
   try {
-    return await dictionaries[locale]();
+    const [languageDictionary, sourcesDictionary] = await Promise.all([
+      dictionaries[locale](),
+      sources(),
+    ]);
+
+    const processedSources = {
+      title: sourcesDictionary.title[locale],
+      subtitle: sourcesDictionary.subtitle[locale],
+      entries: sourcesDictionary.entries.map((entry: any) => ({
+        ...entry,
+        title: entry.title[locale],
+      })),
+    };
+
+    return {
+      ...languageDictionary,
+      sources: processedSources,
+    };
   } catch (error) {
     console.error(`Error loading dictionary for locale "${locale}":`, error);
     throw new Error(`Could not load dictionary for locale: ${locale}`);

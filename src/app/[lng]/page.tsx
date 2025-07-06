@@ -3,8 +3,12 @@
 import { getDictionary, type Language } from '@/dictionaries/client';
 import { useState, useEffect } from 'react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Link from 'next/link';
 
 interface TimelineDict {
+  nav: {
+    sourcesLink: string;
+  };
   timeline: {
     title: string;
     subtitle: string;
@@ -237,6 +241,11 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
             {lng === 'es' 
               ? 'Esta página documenta los eventos tal como han ocurrido. Los precedentes legales aquí establecidos pueden afectar la política digital futura.' 
               : 'This page documents events as they have occurred. Legal precedents established here may affect future digital policy.'}
+          </p>
+          <p className="mt-4">
+            <Link href={`/${lng}/sources`} className="text-red-400 hover:text-red-200 transition-colors duration-200">
+              {dict.nav.sourcesLink}
+            </Link>
           </p>
         </div>
       </div>
