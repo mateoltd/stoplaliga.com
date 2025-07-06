@@ -36,6 +36,8 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
   const [dict, setDict] = useState<TimelineDict | null>(null);
   const [lng, setLng] = useState<Language>('es');
   const [visibleEvents, setVisibleEvents] = useState<Set<string>>(new Set());
+  const [mobileEventIndex, setMobileEventIndex] = useState(0);
+  const [isDetailsExpanded, setIsDetailsExpanded] = useState(false);
 
   useEffect(() => {
     const loadContent = async () => {
@@ -69,6 +71,16 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
     return () => observer.disconnect();
   }, [dict]);
 
+  const handleNextEvent = () => {
+    setMobileEventIndex((prev) => Math.min(prev + 1, events.length - 1));
+    setIsDetailsExpanded(false);
+  };
+
+  const handlePrevEvent = () => {
+    setMobileEventIndex((prev) => Math.max(prev - 1, 0));
+    setIsDetailsExpanded(false);
+  };
+
   if (!dict) {
     return (
       <div className="min-h-screen bg-black text-white font-mono flex items-center justify-center">
@@ -97,6 +109,9 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
     });
   };
 
+  const currentMobileEventKey = events[mobileEventIndex];
+  const currentMobileEvent = dict.timeline.events[currentMobileEventKey];
+
   return (
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Header */}
@@ -118,8 +133,114 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
         </div>
       </div>
 
-      {/* Timeline */}
-      <div className="p-8">
+      {/* Timeline - Mobile (Story-Style) */}
+      <div className="md:hidden p-4 pt-6">
+        {/* Progress Bar */}
+        <div className="flex items-center gap-1 mb-4">
+          {events.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
+                index === mobileEventIndex ? 'bg-red-500' : 'bg-gray-700'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Event Card */}
+        {currentMobileEvent && (
+          <div className="bg-gray-900 border-2 border-gray-700 p-4 rounded-lg flex flex-col min-h-[60vh]">
+            {/* Card Header */}
+            <div>
+              <div className="text-red-400 text-sm font-bold mb-2 uppercase tracking-wide">
+                {formatDate(currentMobileEventKey)}
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">
+                {currentMobileEvent.title}
+              </h3>
+            </div>
+
+            {/* Card Body */}
+            <div className="flex-grow flex flex-col justify-between">
+              <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                {currentMobileEvent.description}
+              </p>
+
+              {/* Card Footer */}
+              <div>
+                {/* Expandable "Why it matters" section */}
+                {'why' in currentMobileEvent && currentMobileEvent.why && (
+                  <div className="my-4">
+                    {isDetailsExpanded ? (
+                      <div>
+                        {currentMobileEventKey === '2025-02-09' && (
+                          <div className="bg-gray-800 border-2 border-red-500 p-3 mb-4">
+                            <div className="text-red-400 text-xs uppercase tracking-wide mb-2 font-bold text-center">{lng === 'es' ? '¿Por qué importa?' : 'Why it matters'}</div>
+                            <div className="grid grid-cols-3 gap-2 text-center">
+                              <div className="bg-red-900 bg-opacity-30 border border-red-600 p-2 rounded"><div className="text-xl font-bold text-red-400">240M+</div><div className="text-xs text-gray-300">{lng === 'es' ? 'Sitios web' : 'Websites'}</div></div>
+                              <div className="bg-red-900 bg-opacity-30 border border-red-600 p-2 rounded"><div className="text-xl font-bold text-red-400">20%</div><div className="text-xs text-gray-300">{lng === 'es' ? 'De la web global' : 'Of global web'}</div></div>
+                              <div className="bg-red-900 bg-opacity-30 border border-red-600 p-2 rounded"><div className="text-xl font-bold text-red-400">3M+</div><div className="text-xs text-gray-300">{lng === 'es' ? 'Sitios afectados' : 'Sites affected'}</div></div>
+                            </div>
+                            <p className="text-red-100 text-xs mt-2 text-center">{currentMobileEvent.why}</p>
+                          </div>
+                        )}
+                        {currentMobileEventKey === '2025-04-12' && (
+                           <div className="bg-gray-800 border-2 border-red-500 p-3 mb-4">
+                            <div className="text-red-400 text-xs uppercase tracking-wide mb-2 font-bold text-center">{lng === 'es' ? '¿Por qué importa?' : 'Why it matters'}</div>
+                            <div className="flex items-center justify-center space-x-4 mb-2">
+                              <div className="text-center"><div className="text-xl font-bold text-red-400">9M+</div><div className="text-xs text-gray-300">{lng === 'es' ? 'Sitios en Vercel' : 'Sites on Vercel'}</div></div>
+                              <div className="text-red-500 text-xl">×</div>
+                              <div className="text-center"><div className="text-xl font-bold text-red-400">DEV</div><div className="text-xs text-gray-300">{lng === 'es' ? 'Enfoque principal' : 'Main focus'}</div></div>
+                            </div>
+                            <p className="text-red-100 text-xs text-center">{currentMobileEvent.why}</p>
+                          </div>
+                        )}
+                        <button onClick={() => setIsDetailsExpanded(false)} className="w-full text-center text-sm text-red-400 py-2">{lng === 'es' ? 'Mostrar menos' : 'Show less'}</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => setIsDetailsExpanded(true)} className="w-full text-center text-sm text-red-400 py-2">{lng === 'es' ? 'Mostrar más detalles' : 'Show more details'}</button>
+                    )}
+                  </div>
+                )}
+                
+                {/* Impact Section */}
+                <div className="border-l-4 border-red-500 pl-4 bg-red-900 bg-opacity-20 py-2">
+                  <p className="text-red-200 font-semibold text-sm">
+                    <span className="text-red-400 text-xs uppercase tracking-wide block mb-1">
+                      {lng === 'es' ? 'IMPACTO' : 'IMPACT'}
+                    </span>
+                    {currentMobileEvent.impact}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Navigation */}
+        <div className="flex justify-between items-center mt-4">
+          <button
+            onClick={handlePrevEvent}
+            disabled={mobileEventIndex === 0}
+            className="px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
+          >
+            {lng === 'es' ? 'Anterior' : 'Previous'}
+          </button>
+          <span className="text-sm text-gray-400">
+            {mobileEventIndex + 1} / {events.length}
+          </span>
+          <button
+            onClick={handleNextEvent}
+            disabled={mobileEventIndex === events.length - 1}
+            className="px-4 py-2 bg-red-700 border border-red-500 rounded-md text-white disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
+          >
+            {lng === 'es' ? 'Siguiente' : 'Next'}
+          </button>
+        </div>
+      </div>
+
+      {/* Timeline - Desktop (Vertical) */}
+      <div className="hidden md:block p-8">
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-8 md:left-12 top-0 bottom-0 w-1 bg-red-500"></div>
@@ -194,7 +315,7 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
                                 </div>
                               </div>
                               <div className="bg-red-900 bg-opacity-30 border border-red-600 p-3">
-                                <div className="text-2xl font-bold text-red-400">∞</div>
+                                <div className="text-2xl font-bold text-red-400">3M+</div>
                                 <div className="text-xs text-gray-300">
                                   {lng === 'es' ? 'Sitios afectados' : 'Sites affected'}
                                 </div>
