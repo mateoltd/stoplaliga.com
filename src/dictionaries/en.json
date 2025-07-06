@@ -29,40 +29,40 @@
         "why": "Cloudflare provides services to more than 240 million websites globally, representing approximately 20% of the world's web infrastructure."
       },
       "2025-02-19": {
-        "title": "Cloudflare Files Legal Challenge",
-        "description": "Cloudflare and RootedCON filed a legal challenge against LaLiga, questioning the proportionality of IP blocks that affected legitimate users and businesses.",
-        "impact": "They argued the blocks were overly broad, affecting critical infrastructure beyond the specific target."
+        "title": "Cloudflare Fights Back with a Lawsuit",
+        "description": "Fed up with the collateral damage, Cloudflare—the company that keeps millions of sites online by shielding them from attacks—and RootedCON, a Spanish cybersecurity collective that advocates for an open internet, sued LaLiga. They argued that blocking whole IP ranges was like shutting down an entire neighbourhood to stop one shoplifter: everyone gets punished.",
+        "impact": "The lawsuit highlighted that an IP address is just the numerical \"street address\" of a server. Behind a Content Delivery Network (CDN) like Cloudflare, the same address can be shared by thousands of unrelated sites. Blanket blocks therefore knocked offline innocent stores, blogs, and even government portals."
       },
       "2025-03-26": {
         "title": "Cloudflare Loses Appeal",
-        "description": "A court (the same that approved the initial order in December 2024) rejected Cloudflare's appeal, allowing LaLiga to keep blocking IPs.",
-        "impact": "This meant disruptions would continue, especially during football match weekends."
+        "description": "On 26 March, the same Barcelona judge who had green-lit the December order sided with LaLiga again and tossed out Cloudflare's appeal.",
+        "impact": "Spanish users braced for more weekend outages: the sweeping IP blocks would continue during matches."
       },
       "2025-04-12": {
-        "title": "Vercel Receives Block Notifications",
-        "description": "LaLiga sent notifications to Vercel, a hosting and deployment platform, claiming it was hosting content that infringed copyright.",
-        "impact": "Blocks targeting Vercel's IPs disrupted websites used by developers and businesses utilizing the platform.",
-        "why": "Vercel is a deployment platform used by more than 9 million websites, particularly popular among developers and development teams."
+        "title": "Vercel Gets Hit by Blocks",
+        "description": "LaLiga now turned its sights on Vercel—a platform developers use to ship code to production in seconds—claiming that some deployments were streaming matches illegally. It demanded that ISPs block entire pools of Vercel IPs. Overnight, personal portfolios, small shops and open-source docs went dark in Spain.",
+        "impact": "Thousands of websites hosted on Vercel vanished for Spanish visitors, hampering businesses and developer communities alike.",
+        "why": "Vercel powers more than 9 million websites and is beloved by front-end developers."
       },
       "2025-04-15": {
         "title": "Vercel Speaks Out",
-        "description": "Vercel's CEO, Guillermo Rauch, publicly criticized the blocks, explaining that they harmed legitimate websites and developers.",
-        "impact": "Vercel reported working with LaLiga to resolve the issue but noted the blocks were overly aggressive."
+        "description": "Guillermo Rauch, Vercel's CEO, broke his silence on X, calling the blocks \"over-aggressive\" and reminding LaLiga that the very people who build the web were being caught in the crossfire.",
+        "impact": "His statement piled public pressure onto LaLiga, but the blocks remained while both sides negotiated."
       },
       "2025-05-04": {
         "title": "Twitch and Others Affected",
-        "description": "LaLiga's blocks hit more platforms, including Twitch, a popular streaming service.",
-        "impact": "IPs for Twitch and other services like Netlify were blocked, causing outages for gamers, developers, and businesses."
+        "description": "The shockwave spread further. Twitch—the live-streaming service where millions watch esports and chat shows—and hosting service Netlify found their IPs black-listed.",
+        "impact": "Gamers, content creators and small businesses alike lost access to their channels and sites for hours."
       },
       "2025-05-20": {
         "title": "Cloudflare's CEO Warns of Dangers",
-        "description": "Cloudflare's CEO, Matthew Prince, spoke out on X, calling LaLiga's strategy 'bonkers' and warning that blocking critical IPs could harm emergency services and even cost lives.",
-        "impact": "He said Cloudflare is willing to help but wants targeted solutions."
+        "description": "Cloudflare's outspoken CEO, Matthew Prince, vented on X, branding LaLiga's strategy \"bonkers\" and warning that pulling critical IPs could knock out emergency services and even cost lives. He reiterated Cloudflare's offer to help craft laser-focused blocks.",
+        "impact": "The post went viral, framing the debate as a matter of public safety rather than football rights."
       },
       "2025-07-06": {
         "title": "Blocks Continue, No Major Resolution",
-        "description": "As of today, blocks continue without significant resolution.",
-        "impact": "Spain's internet continues to be regularly disrupted, affecting millions of legitimate users."
+        "description": "Months later the blocks still stand and no lasting solution is in sight.",
+        "impact": "Spanish internet users continue to endure routine outages that cripple millions of legitimate sites."
       }
     }
   },

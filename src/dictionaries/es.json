@@ -29,40 +29,40 @@
         "why": "Cloudflare proporciona servicios a más de 240 millones de sitios web globalmente, representando aproximadamente el 20% de la infraestructura web mundial."
       },
       "2025-02-19": {
-        "title": "Cloudflare Presenta Recurso Legal",
-        "description": "Cloudflare y RootedCON presentaron un recurso legal contra LaLiga, cuestionando la proporcionalidad de los bloqueos de IP que afectaron a usuarios y empresas legítimas.",
-        "impact": "Argumentaron que los bloqueos eran excesivamente amplios, afectando infraestructura crítica más allá del objetivo específico."
+        "title": "Cloudflare Contraataca con una Demanda",
+        "description": "Cansados del daño colateral, Cloudflare—la empresa que mantiene en línea millones de sitios protegiéndolos de ataques—y RootedCON, una comunidad española de ciberseguridad que defiende una Internet abierta, acudieron a los tribunales. Argumentaron que bloquear rangos completos de IP era como cerrar todo un barrio para atrapar a un carterista: todos salen perjudicados.",
+        "impact": "La demanda subrayó que una dirección IP es la \"dirección\" numérica de un servidor. Detrás de una red de distribución de contenidos (CDN) como Cloudflare, ese mismo número se comparte entre miles de sitios sin relación. Los bloqueos indiscriminados apagaron tiendas, blogs e incluso portales gubernamentales."
       },
       "2025-03-26": {
         "title": "Cloudflare Pierde la Apelación",
-        "description": "Un tribunal (el mismo que aprobó la orden inicial en diciembre de 2024) rechazó la apelación de Cloudflare, permitiendo a LaLiga continuar bloqueando IPs.",
-        "impact": "Esto significó que las interrupciones continuarían, especialmente durante los fines de semana de partidos de fútbol."
+        "description": "El 26 de marzo, el mismo juez de Barcelona que autorizó la orden de diciembre volvió a dar la razón a LaLiga y desestimó el recurso de Cloudflare.",
+        "impact": "Los usuarios españoles se prepararon para más cortes durante los fines de semana de fútbol: los amplios bloqueos de IP continuarían."
       },
       "2025-04-12": {
-        "title": "Vercel Recibe Notificaciones de Bloqueo",
-        "description": "LaLiga envió notificaciones a Vercel, plataforma de hosting y deployment, alegando que alojaba contenido que infringía derechos de autor.",
-        "impact": "Los bloqueos dirigidos a las IPs de Vercel interrumpieron sitios web de desarrolladores y empresas que utilizan la plataforma.",
-        "why": "Vercel es una plataforma de deployment utilizada por más de 9 millones de sitios web, siendo especialmente popular entre desarrolladores y equipos de desarrollo."
+        "title": "Vercel Recibe Bloqueos Masivos",
+        "description": "LaLiga puso ahora en el punto de mira a Vercel—la plataforma que usamos los desarrolladores para desplegar sitios en segundos—alegando que algunos proyectos retransmitían partidos pirata. Exigió a los operadores bloquear los rangos de IP de Vercel. De la noche a la mañana, portfolios, tiendas online y documentación open-source dejaron de cargar en España.",
+        "impact": "Miles de sitios alojados en Vercel quedaron inaccesibles para los visitantes españoles, afectando a negocios y comunidades de software.",
+        "why": "Vercel aloja más de 9 millones de sitios y es la navaja suiza favorita de los desarrolladores front-end."
       },
       "2025-04-15": {
         "title": "Vercel Alza la Voz",
-        "description": "El CEO de Vercel, Guillermo Rauch, criticó públicamente los bloqueos, explicando que dañaron sitios web y desarrolladores legítimos.",
-        "impact": "Vercel reportó estar trabajando con LaLiga para resolver el problema pero notó que los bloqueos eran excesivamente agresivos."
+        "description": "Guillermo Rauch, CEO de Vercel, rompió el silencio en X. Calificó los bloqueos de \"desproporcionados\" y recordó que los propios constructores de la web estaban pagando los platos rotos.",
+        "impact": "Su mensaje aumentó la presión pública sobre LaLiga, pero los bloqueos continuaron mientras ambas partes negociaban."
       },
       "2025-05-04": {
         "title": "Twitch y Otros Afectados",
-        "description": "Los bloqueos de LaLiga afectaron más plataformas, incluyendo Twitch, un servicio de streaming popular.",
-        "impact": "Las IPs de Twitch y otros servicios como Netlify fueron bloqueadas, causando interrupciones para gamers, desarrolladores y empresas."
+        "description": "La onda expansiva siguió. Twitch—la plataforma de streaming donde millones ven esports y charlas en directo—y el servicio de hosting Netlify vieron cómo sus IP eran vetadas.",
+        "impact": "Gamers, creadores de contenido y pequeñas empresas perdieron acceso durante horas a sus canales y webs."
       },
       "2025-05-20": {
         "title": "El CEO de Cloudflare Advierte de Peligros",
-        "description": "El CEO de Cloudflare, Matthew Prince, habló en X, calificando la estrategia de LaLiga como 'disparatada' y advirtiendo que bloquear IPs críticas podría dañar servicios de emergencia e incluso costar vidas.",
-        "impact": "Dijo que Cloudflare está dispuesta a ayudar pero quiere soluciones específicas."
+        "description": "Matthew Prince, CEO de Cloudflare, se desahogó en X. Tildó la estrategia de LaLiga de \"disparatada\" y advirtió que cortar IP críticas podría tumbar servicios de emergencia e incluso costar vidas. Reiteró la oferta de Cloudflare para ayudar con bloqueos más precisos.",
+        "impact": "La publicación se volvió viral y convirtió el debate en un asunto de seguridad pública más que de derechos futbolísticos."
       },
       "2025-07-06": {
         "title": "Los Bloqueos Continúan, Sin Resolución Mayor",
-        "description": "Hasta la fecha, los bloqueos continúan sin una resolución significativa.",
-        "impact": "La internet española sigue siendo interrumpida regularmente, afectando a millones de usuarios legítimos."
+        "description": "Meses después, los bloqueos siguen en pie y no se vislumbra una solución duradera.",
+        "impact": "La red española continúa sufriendo apagones regulares que afectan a millones de sitios legítimos."
       }
     }
   },
@@ -88,14 +88,12 @@
     "cases": [
       {
         "title": "Vigilancia a través de la App de LaLiga (2018-2019)",
-        "emoji": "🕵️",
         "content": "En 2018, LaLiga actualizó su aplicación móvil, utilizada por millones de usuarios, para incluir una función que activaba el micrófono del teléfono para detectar la retransmisión no autorizada de partidos de fútbol en lugares públicos como bares y restaurantes. Esta funcionalidad utilizaba tecnología de huella digital de audio para identificar las retransmisiones de partidos y la combinaba con datos de ubicación para señalar los locales sin licencia. En junio de 2019, la Agencia Española de Protección de Datos (AEPD) multó a LaLiga con 250.000 € por infringir el Reglamento General de Protección de Datos (RGPD).\n\nLa AEPD determinó que LaLiga no informó claramente a los usuarios sobre el uso de sus micrófonos y datos de ubicación, incumpliendo las normas de transparencia (artículo 5.1, RGPD) y el derecho a retirar el consentimiento (artículo 7.3, RGPD). La agencia exigió a LaLiga que mostrara una notificación, como un icono, cada vez que se activara el micrófono. LaLiga argumentó que la app solo capturaba una pequeña parte del audio (0,75%) como huella digital, no conversaciones, y que los usuarios daban su consentimiento durante la instalación. Apelaron la multa y desactivaron la función el 30 de junio de 2019.",
         "image": "mic",
         "funnyComment": "[Insertar comentario gracioso que no se me ha ocurrido aún]"
       },
       {
         "title": "Uso de datos biométricos en estadios sin evaluación de impacto (2023–2025)",
-        "emoji": "🏟️",
         "content": "A partir de 2023, LaLiga introdujo sistemas de reconocimiento facial en algunos estadios para controlar el acceso y hacer frente a la violencia, el racismo y la intolerancia, según lo dispuesto por la Comisión Antiviolencia y el Consejo Superior de Deportes (CSD) de España. En marzo de 2025, la AEPD multó a LaLiga con 1 millón de euros por no realizar una Evaluación de Impacto relativa a la Protección de Datos (EIPD) antes de utilizar datos biométricos, incumpliendo los requisitos del RGPD.\n\nLa AEPD declaró que LaLiga, como responsable del tratamiento, no evaluó los riesgos para la privacidad de los espectadores. La multa incluía la orden de suspender el tratamiento de datos biométricos hasta que se completara una EIPD. LaLiga recurrió, argumentando que los clubes, y no LaLiga, gestionaban los datos biométricos y que los sistemas eran requeridos por el CSD y la Comisión Antiviolencia.\n\nHicieron referencia a la sentencia del Tribunal Supremo de 2024 a su favor en el caso de la app para impugnar la decisión de la AEPD. Esta controversia plantea preocupaciones sobre la privacidad en los espacios públicos, ya que la recopilación de datos biométricos afecta a todos los asistentes al estadio.",
         "image": "eye",
         "funnyComment": "¡Sonríe! Estás en la cámara de LaLiga."
