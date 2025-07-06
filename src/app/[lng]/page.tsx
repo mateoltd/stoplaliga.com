@@ -25,10 +25,14 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
 
   useEffect(() => {
     const loadContent = async () => {
-      const { lng: language } = await paramsPromise;
-      const dictionary = await getDictionary(language);
-      setLng(language);
-      setDict(dictionary);
+      try {
+        const { lng: language } = await paramsPromise;
+        const dictionary = await getDictionary(language);
+        setLng(language);
+        setDict(dictionary);
+      } catch (error) {
+        console.error('Failed to load page content:', error);
+      }
     };
     loadContent();
   }, [paramsPromise]);
