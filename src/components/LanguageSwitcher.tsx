@@ -12,8 +12,10 @@ export default function LanguageSwitcher({ currentLanguage }: LanguageSwitcherPr
   const pathname = usePathname();
 
   const switchLanguage = (newLang: Language) => {
-    // Replace the language part of the URL
-    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLang}`);
+    const segments = pathname.split('/');
+    // The first segment is empty, the second is the language
+    segments[1] = newLang;
+    const newPath = segments.join('/');
     router.push(newPath);
   };
 
