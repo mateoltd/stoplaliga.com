@@ -111,7 +111,10 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
           <div className="absolute left-8 md:left-12 top-0 bottom-0 w-1 bg-red-500"></div>
           
           {events.map((eventKey, index) => {
-            const event = dict.timeline.events[eventKey as keyof typeof dict.timeline.events];
+            if (!Object.prototype.hasOwnProperty.call(dict.timeline.events, eventKey)) {
+              return null;
+            }
+            const event = dict.timeline.events[eventKey];
             const isLast = index === events.length - 1;
             
             return (
