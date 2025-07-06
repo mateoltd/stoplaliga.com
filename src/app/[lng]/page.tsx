@@ -4,6 +4,7 @@ import { getDictionary, type Language } from '@/dictionaries/client';
 import { useState, useEffect } from 'react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Link from 'next/link';
+import OtherPractices from '@/components/OtherPractices';
 
 interface TimelineDict {
   nav: {
@@ -19,6 +20,15 @@ interface TimelineDict {
       impact: string;
       why?: string;
     }>;
+  };
+  otherPractices: {
+    title: string;
+    subtitle: string;
+    cases: {
+      title: string;
+      abstract: string;
+      linkText: string;
+    }[];
   };
 }
 
@@ -230,6 +240,9 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
           })}
         </div>
       </div>
+
+      {/* Other Practices Section */}
+      <OtherPractices content={dict.otherPractices} lng={lng} />
 
       {/* Footer */}
       <div className="border-t-4 border-red-500 p-8 text-center">

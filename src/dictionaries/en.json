@@ -65,5 +65,39 @@
         "impact": "Spain's internet continues to be regularly disrupted, affecting millions of legitimate users."
       }
     }
+  },
+  "otherPractices": {
+    "title": "A History of Controversy",
+    "subtitle": "This isn't the first time LaLiga's actions have been questioned. Below are summaries of other notable cases.",
+    "cases": [
+      {
+        "title": "The Spy App",
+        "abstract": "In 2018, LaLiga's mobile app was found to be using users' microphones and GPS to spy on bars illegally streaming games. This led to a €250,000 GDPR fine, which was later overturned, but the practice was widely condemned as a breach of privacy.",
+        "linkText": "Read the full story"
+      },
+      {
+        "title": "Biometric Surveillance",
+        "abstract": "In 2023, LaLiga faced a €1 million fine for implementing facial recognition in stadiums without a proper data protection impact assessment, raising concerns over mass surveillance of fans.",
+        "linkText": "Read the full story"
+      }
+    ]
+  },
+  "controversiesPage": {
+    "title": "A History of Controversies",
+    "backLink": "Back to Timeline",
+    "cases": [
+      {
+        "title": "Surveillance through the LaLiga App (2018-2019)",
+        "content": "In 2018, LaLiga updated its mobile application, used by millions of users, to include a feature that activated the phone's microphone to detect the unauthorized broadcasting of football matches in public venues like bars and restaurants. This functionality used audio fingerprinting technology to identify match broadcasts and combined it with location data to flag unlicensed venues. In June 2019, the Spanish Agency for Data Protection (AEPD) fined LaLiga €250,000 for infringing the General Data Protection Regulation (GDPR).\n\nThe AEPD determined that LaLiga failed to clearly inform users about the use of their microphones and location data, thereby breaching transparency rules (Article 5.1, GDPR) and the right to withdraw consent (Article 7.3, GDPR). The agency required LaLiga to display a notification, such as an icon, each time the microphone was activated. LaLiga argued that the app only captured a small part of the audio (0.75%) as a digital fingerprint, not conversations, and that users gave their consent during installation. They appealed the fine and deactivated the function on June 30, 2019.",
+        "image": "mic",
+        "funnyComment": "We're always listening... to your feedback, of course."
+      },
+      {
+        "title": "Biometric Surveillance in Stadiums (2021-Ongoing)",
+        "content": "Since 2021, LaLiga has been implementing a biometric access system in football stadiums, which uses facial recognition to verify fans' identities. The system, developed with a technology partner, aims to improve security and streamline entry into venues. Fans who opt-in have their facial data scanned and linked to their ticket information, allowing them to enter the stadium without presenting a physical ticket or ID.\n\nHowever, this initiative has raised significant privacy concerns. Critics argue that the collection and storage of sensitive biometric data create a high-risk database that could be vulnerable to breaches. There are also concerns about function creep—the possibility of this data being used for purposes beyond ticketing, such as surveillance or commercial profiling, without explicit user consent. Data protection authorities and digital rights groups have called for greater transparency on how the data is stored, secured, and for how long it is retained, emphasizing the need to comply with the stringent requirements of GDPR for processing special category data like biometrics.",
+        "image": "eye",
+        "funnyComment": "Smile! You're on LaLiga's camera."
+      }
+    ]
   }
 } 

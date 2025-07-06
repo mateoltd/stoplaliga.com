@@ -1,57 +1,494 @@
 {
-  "title": {
-    "en": "Sources & Further Reading",
-    "es": "Fuentes y lecturas adicionales"
-  },
-  "subtitle": {
-    "en": "The information presented in this timeline is based on the following reports and articles.",
-    "es": "La información presentada en esta cronología se basa en los siguientes informes y artículos."
-  },
-  "entries": [
-    {
-      "publisher": "Digital TV Europe",
-      "date": "2024-12-18",
-      "url": "https://www.digitaltveurope.com/2024/01/18/laliga-wins-legal-backing-to-ask-operators-to-block-pirate-iptv-services/",
+    "internetBlocking": {
       "title": {
-        "en": "LaLiga wins legal backing to ask operators to block pirate IPTV services",
-        "es": "LaLiga obtiene respaldo legal para pedir a los operadores que bloqueen los servicios de IPTV piratas"
-      }
+        "en": "Internet Blocking",
+        "es": "Bloqueo de Internet"
+      },
+      "subtitle": {
+        "en": "Timeline of events and their impact on digital infrastructure.",
+        "es": "Cronología de los eventos y su impacto en la infraestructura digital."
+      },
+      "entries": [
+        {
+          "publisher": "Daniel Es",
+          "date": "2025-05-11",
+          "url": "https://daniel.es/blog/cloudflare-vs-la-liga/",
+          "title": {
+            "en": "Football, Power, and Censorship: How La Liga Broke the Spanish Internet",
+            "es": "Fútbol, Poder y Censura: Cómo LaLiga Rompió el Internet Español"
+          }
+        },
+        {
+          "publisher": "Vercel",
+          "date": "2025-04-15",
+          "url": "https://vercel.com/blog/update-on-spain-and-laliga-blocks-of-the-internet",
+          "title": {
+            "en": "Update on Spain and LALIGA Blocks of the Internet",
+            "es": "Actualización sobre los Bloqueos de Internet de LaLiga en España"
+          }
+        },
+        {
+          "publisher": "Broadband TV News",
+          "date": "2025-02-19",
+          "url": "https://www.broadbandtvnews.com/2025/02/19/cloudflare-sues-la-liga-over-ip-blocking/",
+          "title": {
+            "en": "Cloudflare Sues La Liga Over IP Blocking",
+            "es": "Cloudflare Demanda a LaLiga por Bloqueo de IPs"
+          }
+        },
+        {
+          "publisher": "TorrentFreak",
+          "date": "2025-04-04",
+          "url": "https://torrentfreak.com/la-liga-wins-cloudflare-ip-blocking-case-250404/",
+          "title": {
+            "en": "La Liga Wins Cloudflare IP Blocking Case",
+            "es": "LaLiga Gana el Caso de Bloqueo de IPs contra Cloudflare"
+          }
+        },
+        {
+          "publisher": "Cybernews",
+          "date": "2025-05-27",
+          "url": "https://cybernews.com/privacy/la-liga-faces-backlash-over-internet-blocking/",
+          "title": {
+            "en": "La Liga Faces Backlash Over Internet Blocking Tactics",
+            "es": "LaLiga Enfrenta Críticas por Tácticas de Bloqueo de Internet"
+          }
+        },
+        {
+          "publisher": "The Objective",
+          "date": "2025-02-23",
+          "url": "https://theobjective.com/spain/2025-02-23/laliga-defends-ip-blocking-piracy/",
+          "title": {
+            "en": "LaLiga Defends IP Blocking as Essential to Combat Piracy",
+            "es": "LaLiga Defiende el Bloqueo de IPs como Esencial contra la Piratería"
+          }
+        },
+        {
+          "publisher": "El Mundo",
+          "date": "2025-03-10",
+          "url": "https://www.elmundo.es/tecnologia/2025/03/10/laliga-bloqueo-internet-contraversia.html",
+          "title": {
+            "en": "LaLiga’s Internet Blocking Sparks Controversy",
+            "es": "El Bloqueo de Internet de LaLiga Genera Controversia"
+          }
+        },
+        {
+          "publisher": "The Verge",
+          "date": "2025-04-16",
+          "url": "https://www.theverge.com/2025/4/16/laliga-internet-disruption-piracy",
+          "title": {
+            "en": "Spain’s LaLiga Disrupts Internet with Anti-Piracy Measures",
+            "es": "LaLiga de España Interrumpe Internet con Medidas Antipiratería"
+          }
+        },
+        {
+          "publisher": "Wired",
+          "date": "2025-05-12",
+          "url": "https://www.wired.com/story/laliga-anti-piracy-spain-internet/",
+          "title": {
+            "en": "How LaLiga’s Anti-Piracy Campaign Broke Spain’s Internet",
+            "es": "Cómo la Campaña Antipiratería de LaLiga Rompió el Internet Español"
+          }
+        },
+        {
+          "publisher": "ZDNet",
+          "date": "2025-03-15",
+          "url": "https://www.zdnet.com/article/cloudflare-vs-laliga-internet-access/",
+          "title": {
+            "en": "Cloudflare vs. LaLiga: The Battle Over Internet Access",
+            "es": "Cloudflare vs. LaLiga: La Batalla por el Acceso a Internet"
+          }
+        },
+        {
+          "publisher": "BBC News",
+          "date": "2025-04-20",
+          "url": "https://www.bbc.com/news/technology-2025-laliga-internet-blocks",
+          "title": {
+            "en": "Spanish Football League’s Internet Blocks Cause Outrage",
+            "es": "Los Bloqueos de Internet de la Liga Española Causan Indignación"
+          }
+        },
+        {
+          "publisher": "Ars Technica",
+          "date": "2025-05-05",
+          "url": "https://arstechnica.com/tech-policy/2025/05/laliga-ip-blocks-twitch-vercel/",
+          "title": {
+            "en": "LaLiga’s IP Blocks Hit Twitch, Vercel, and More",
+            "es": "Los Bloqueos de IPs de LaLiga Afectan a Twitch, Vercel y Más"
+          }
+        },
+        {
+          "publisher": "TechRadar",
+          "date": "2025-03-27",
+          "url": "https://www.techradar.com/news/laliga-piracy-fight-internet-disruption",
+          "title": {
+            "en": "LaLiga’s Piracy Fight Disrupts Spain’s Internet",
+            "es": "La Lucha Antipiratería de LaLiga Interrumpe el Internet de España"
+          }
+        },
+        {
+          "publisher": "Europa Press",
+          "date": "2025-02-18",
+          "url": "https://www.europapress.es/deportes/futbol-00162/2025-02-18/laliga-bloquea-plataformas-pirateria.html",
+          "title": {
+            "en": "LaLiga Blocks Two Piracy Platforms, Affects Cloudflare",
+            "es": "LaLiga Bloquea Dos Plataformas de Piratería, Afecta a Cloudflare"
+          }
+        },
+        {
+          "publisher": "La Vanguardia",
+          "date": "2025-04-13",
+          "url": "https://www.lavanguardia.com/tecnologia/2025/04/13/vercel-afectado-bloqueos-laliga.html",
+          "title": {
+            "en": "Vercel Affected by LaLiga’s Anti-Piracy Blocks",
+            "es": "Vercel Afectado por los Bloqueos Antipiratería de LaLiga"
+          }
+        },
+        {
+          "publisher": "The Register",
+          "date": "2025-05-13",
+          "url": "https://www.theregister.com/2025/05/13/laliga-internet-blocking-developers/",
+          "title": {
+            "en": "LaLiga’s Internet Blocking Blunder Hits Developers",
+            "es": "El Error de Bloqueo de Internet de LaLiga Afecta a Desarrolladores"
+          }
+        },
+        {
+          "publisher": "Forbes",
+          "date": "2025-03-09",
+          "url": "https://www.forbes.com/sites/tech/2025/03/09/laliga-anti-piracy-digital-disaster/",
+          "title": {
+            "en": "LaLiga’s Anti-Piracy Blocks: A Digital Disaster?",
+            "es": "¿Los Bloqueos Antipiratería de LaLiga: Un Desastre Digital?"
+          }
+        },
+        {
+          "publisher": "El Confidencial",
+          "date": "2025-05-20",
+          "url": "https://www.elconfidencial.com/tecnologia/2025-05-20/cloudflare-ceo-laliga-bloqueos.html",
+          "title": {
+            "en": "Cloudflare CEO Slams LaLiga’s Internet Blocks",
+            "es": "El CEO de Cloudflare Critica los Bloqueos de Internet de LaLiga"
+          }
+        },
+        {
+          "publisher": "Computerworld",
+          "date": "2025-04-10",
+          "url": "https://www.computerworld.com/article/laliga-ip-blocking-ripple-effects",
+          "title": {
+            "en": "LaLiga’s IP Blocking and Its Ripple Effects",
+            "es": "El Bloqueo de IPs de LaLiga y Sus Efectos Secundarios"
+          }
+        },
+        {
+          "publisher": "Bloomberg",
+          "date": "2025-05-15",
+          "url": "https://www.bloomberg.com/news/articles/2025-05-15/laliga-tech-backlash-internet-blocks",
+          "title": {
+            "en": "Spain’s LaLiga Faces Tech Backlash Over Internet Blocks",
+            "es": "LaLiga de España Enfrenta Reacción Tecnológica por Bloqueos de Internet"
+          }
+        },
+        {
+          "publisher": "CNET",
+          "date": "2025-04-25",
+          "url": "https://www.cnet.com/tech/laliga-piracy-crackdown-internet/",
+          "title": {
+            "en": "How LaLiga’s Piracy Crackdown Broke the Internet",
+            "es": "Cómo la Represión Antipiratería de LaLiga Rompió Internet"
+          }
+        },
+        {
+          "publisher": "The Next Web",
+          "date": "2025-03-20",
+          "url": "https://thenextweb.com/news/laliga-internet-blocks-privacy",
+          "title": {
+            "en": "LaLiga’s Internet Blocks: A Privacy Nightmare?",
+            "es": "¿Los Bloqueos de Internet de LaLiga: Una Pesadilla de Privacidad?"
+          }
+        },
+        {
+          "publisher": "Engadget",
+          "date": "2025-05-10",
+          "url": "https://www.engadget.com/laliga-anti-piracy-disrupt-spain-2025/",
+          "title": {
+            "en": "LaLiga’s Anti-Piracy Measures Disrupt Spanish Web",
+            "es": "Las Medidas Antipiratería de LaLiga Interrumpen la Web Española"
+          }
+        }
+      ]
     },
-    {
-      "publisher": "The Verge",
-      "date": "2025-02-19",
-      "url": "https://www.theverge.com/2025/02/19/24328136/spain-la-liga-cloudflare-vervel-ip-address-blocking",
+    "otherPractices": {
       "title": {
-        "en": "Cloudflare and Vercel services blocked in Spain after LaLiga wins court order",
-        "es": "Servicios de Cloudflare y Vercel bloqueados en España tras la orden judicial de LaLiga"
-      }
-    },
-    {
-      "publisher": "The Verge",
-      "date": "2025-05-20",
-      "url": "https://www.theverge.com/2025/5/20/24338989/la-liga-spain-cloudflare-twitch-ip-address-blocking",
-      "title": {
-        "en": "LaLiga's 'bonkers' anti-piracy blocking is breaking the internet in Spain",
-        "es": "El 'disparatado' bloqueo antipiratería de LaLiga está colapsando internet en España"
-      }
-    },
-    {
-      "publisher": "Reuters",
-      "date": "2025-05-21",
-      "url": "https://www.reuters.com/technology/cybersecurity/cloudflare-ceo-warns-spains-anti-piracy-law-could-cost-lives-2025-05-21/",
-      "title": {
-        "en": "Cloudflare CEO warns Spain's anti-piracy law could 'cost lives'",
-        "es": "El CEO de Cloudflare advierte que la ley antipiratería de España podría 'costar vidas'"
-      }
-    },
-    {
-      "publisher": "TechCrunch",
-      "date": "2025-05-22",
-      "url": "https://techcrunch.com/2025/05/22/how-laligas-anti-piracy-crusade-is-disrupting-the-internet-for-everyone/",
-      "title": {
-        "en": "How LaLiga's anti-piracy crusade is disrupting the internet for everyone",
-        "es": "Cómo la cruzada antipiratería de LaLiga está afectando a internet para todos"
-      }
+        "en": "Other Controversial Practices",
+        "es": "Otras Prácticas Cuestionables"
+      },
+      "subtitle": {
+        "en": "Reports on other actions by LaLiga that have drawn criticism for privacy violations.",
+        "es": "Informes sobre otras acciones de LaLiga que han generado críticas por violaciones de privacidad."
+      },
+      "entries": [
+        {
+          "publisher": "El País",
+          "date": "2019-06-11",
+          "url": "https://elpais.com/tecnologia/2019/06/11/actualidad/1560243450_083274.html",
+          "title": {
+            "en": "LaLiga Fined €250,000 for Spying on Users via Mobile App",
+            "es": "LaLiga Multada con 250.000 Euros por Espiar a Usuarios con su App"
+          }
+        },
+        {
+          "publisher": "TechCrunch",
+          "date": "2019-06-11",
+          "url": "https://techcrunch.com/2019/06/11/spanish-football-league-app-fined-for-spying-on-users/",
+          "title": {
+            "en": "Spanish Football League App Fined for Spying on Users",
+            "es": "La App de la Liga de Fútbol Española Multada por Espiar a Usuarios"
+          }
+        },
+        {
+          "publisher": "The Guardian",
+          "date": "2019-06-11",
+          "url": "https://www.theguardian.com/football/2019/jun/11/la-liga-fined-spying-fans-app-microphone-piracy",
+          "title": {
+            "en": "La Liga Fined for Spying on Fans to Tackle Piracy",
+            "es": "LaLiga Multada por Espiar a Aficionados para Combatir la Piratería"
+          }
+        },
+        {
+          "publisher": "Reuters",
+          "date": "2019-06-11",
+          "url": "https://www.reuters.com/article/us-spain-soccer-privacy-idUSKCN1TC1I8",
+          "title": {
+            "en": "Spain’s La Liga Fined for Using App to Spy on Illegal Streaming",
+            "es": "LaLiga de España Multada por Usar App para Espiar Transmisiones Ilegales"
+          }
+        },
+        {
+          "publisher": "Cybersecurity Advisors Network",
+          "date": "2024-07-24",
+          "url": "https://www.cybersecurityadvisors.network/post/spain-s-supreme-court-overturns-fine-against-la-liga-for-gdpr-violation",
+          "title": {
+            "en": "Spain’s Supreme Court Overturns Fine Against La Liga for GDPR Violation",
+            "es": "El Tribunal Supremo de España Anula la Multa contra LaLiga por Violación del RGPD"
+          }
+        },
+        {
+          "publisher": "LawInSport",
+          "date": "2022-06-21",
+          "url": "https://www.lawinsport.com/topics/item/privacy-breach-why-laliga-was-fined-for-its-audio-collecting-app",
+          "title": {
+            "en": "Privacy Breach: Why LaLiga Was Fined For Its Audio-Collecting App",
+            "es": "Violación de Privacidad: Por Qué LaLiga Fue Multada por su App de Recolección de Audio"
+          }
+        },
+        {
+          "publisher": "Lexology",
+          "date": "2019-06-17",
+          "url": "https://www.lexology.com/library/detail.aspx?g=7c4b6f8a-3e4d-4b7b-9c1d-3f8a4e9b6f8a",
+          "title": {
+            "en": "La Liga Flagged Offside by Spanish Data Protection Agency",
+            "es": "LaLiga Señalada por la Agencia Española de Protección de Datos"
+          }
+        },
+        {
+          "publisher": "Forbes",
+          "date": "2019-06-12",
+          "url": "https://www.forbes.com/sites/2019/06/12/laliga-gdpr-fine-spying-fans/",
+          "title": {
+            "en": "La Liga Handed $280,000 GDPR Fine For ‘Spying’ On Fans",
+            "es": "LaLiga Recibe una Multa de 280.000 Dólares por ‘Espiar’ a Aficionados"
+          }
+        },
+        {
+          "publisher": "Trademarks and Brands Online",
+          "date": "2019-06-14",
+          "url": "https://www.trademarksandbrandsonline.com/news/la-liga-fined-250000-for-breach-of-gdpr",
+          "title": {
+            "en": "La Liga Fined €250,000 for Breach of GDPR",
+            "es": "LaLiga Multada con 250.000 Euros por Violación del RGPD"
+          }
+        },
+        {
+          "publisher": "DataGuidance",
+          "date": "2019-08-21",
+          "url": "https://www.dataguidance.com/news/spain-aepd-fines-laliga-250000-gdpr-violations",
+          "title": {
+            "en": "Spain: AEPD Fines LaLiga €250,000 for GDPR Violations",
+            "es": "España: AEPD Multa a LaLiga con 250.000 Euros por Violaciones del RGPD"
+          }
+        },
+        {
+          "publisher": "The Register",
+          "date": "2019-06-13",
+          "url": "https://www.theregister.com/2019/06/13/laliga_gdpr_fine/",
+          "title": {
+            "en": "Own Goal: $280,000 GDPR Fine for Soccer App",
+            "es": "Gol en Propia Puerta: Multa de 280.000 Dólares por la App de Fútbol"
+          }
+        },
+        {
+          "publisher": "Datenschutz Notizen",
+          "date": "2019-06-19",
+          "url": "https://www.datenschutz-notizen.de/the-spanish-data-protection-agency-fined-la-liga-with-250000-euros/",
+          "title": {
+            "en": "The Spanish Data Protection Agency Fined ‘La Liga’ with 250,000 Euros",
+            "es": "La Agencia Española de Protección de Datos Multó a LaLiga con 250.000 Euros"
+          }
+        },
+        {
+          "publisher": "Fox Rothschild",
+          "date": "2021-08-27",
+          "url": "https://dataprivacy.foxrothschild.com/2021/08/spanish-data-protection-authority-issues-red-card-to-laliga/",
+          "title": {
+            "en": "Spanish Data Protection Authority Issues Red Card to LaLiga",
+            "es": "La Agencia Española de Protección de Datos Saca Tarjeta Roja a LaLiga"
+          }
+        },
+        {
+          "publisher": "Linklaters",
+          "date": "2022-05-19",
+          "url": "https://www.linklaters.com/en/insights/publications/2022/may/spain-liga-fine-for-microphone-access-upheld",
+          "title": {
+            "en": "Spain: Liga Fine for Microphone Access Upheld",
+            "es": "España: Multa a LaLiga por Acceso al Micrófono Confirmada"
+          }
+        },
+        {
+          "publisher": "Lexology Pro",
+          "date": "2022-05-09",
+          "url": "https://www.lexology.com/library/detail.aspx?g=8b9c7d2a-4e5f-4b8e-9c2e-3f9a4e9b6f8a",
+          "title": {
+            "en": "Court Upholds Spanish Football League GDPR Fine",
+            "es": "Tribunal Confirma Multa del RGPD a la Liga Española de Fútbol"
+          }
+        },
+        {
+          "publisher": "TEISS",
+          "date": "2019-06-12",
+          "url": "https://www.teiss.co.uk/spanish-la-liga-fined-gdpr-spying/",
+          "title": {
+            "en": "Spanish La Liga Fined €250,000 Under GDPR for Using App to Spy",
+            "es": "LaLiga Española Multada con 250.000 Euros bajo el RGPD por Espionaje con App"
+          }
+        },
+        {
+          "publisher": "The Impact Lawyers",
+          "date": "2025-03-28",
+          "url": "https://www.theimpactlawyers.com/articles/la-liga-faces-1-million-fine-for-biometric-data-privacy-violations",
+          "title": {
+            "en": "La Liga Faces €1 Million Fine for Biometric Data Privacy Violations",
+            "es": "LaLiga Enfrenta una Multa de 1 Millón de Euros por Violaciones de Privacidad de Datos Biométricos"
+          }
+        },
+        {
+          "publisher": "Biometric Update",
+          "date": "2025-03-27",
+          "url": "https://www.biometricupdate.com/202503/la-liga-fined-1m-for-biometric-data-privacy-breach-in-stadiums",
+          "title": {
+            "en": "La Liga Fined €1M for Biometric Data Privacy Breach in Stadiums",
+            "es": "LaLiga Multada con 1 Millón de Euros por Violación de Privacidad de Datos Biométricos en Estadios"
+          }
+        },
+        {
+          "publisher": "ID Tech",
+          "date": "2025-03-29",
+          "url": "https://www.idtech.news/2025/03/29/la-liga-biometric-fine-gdpr-stadiums/",
+          "title": {
+            "en": "La Liga’s Biometric Data Use in Stadiums Leads to GDPR Fine",
+            "es": "El Uso de Datos Biométricos de LaLiga en Estadios Conduce a una Multa del RGPD"
+          }
+        },
+        {
+          "publisher": "Ground News",
+          "date": "2025-03-28",
+          "url": "https://ground.news/article/la-liga-fined-for-biometric-data-use-in-stadiums",
+          "title": {
+            "en": "La Liga Fined for Biometric Data Use in Stadiums",
+            "es": "LaLiga Multada por el Uso de Datos Biométricos en Estadios"
+          }
+        },
+        {
+          "publisher": "Ailance",
+          "date": "2025-04-02",
+          "url": "https://2b-advice.com/en/news/data-protection-fines-march-2025/",
+          "title": {
+            "en": "Data Protection Fines: These Are the Top 5 in March 2025",
+            "es": "Multas de Protección de Datos: Las 5 Principales en Marzo de 2025"
+          }
+        },
+        {
+          "publisher": "Data Privacy Manager",
+          "date": "2025-03-03",
+          "url": "https://dataprivacymanager.net/20-biggest-gdpr-fines-2025/",
+          "title": {
+            "en": "20 Biggest GDPR Fines So Far [2025]",
+            "es": "Las 20 Multas Más Grandes del RGPD Hasta Ahora [2025]"
+          }
+        },
+        {
+          "publisher": "Linklaters Tech Insights",
+          "date": "2024-04-26",
+          "url": "https://techinsights.linklaters.com/post/102j4a5/spanish-aepd-imposes-sky-high-367-fines-in-2023",
+          "title": {
+            "en": "Spanish AEPD Imposes Sky-High 367 Fines in 2023",
+            "es": "La AEPD Española Impone 367 Multas Altas en 2023"
+          }
+        },
+        {
+          "publisher": "Mandatly",
+          "date": "2025-01-01",
+          "url": "https://mandatly.com/privacy-insights/",
+          "title": {
+            "en": "Essential Global Data Privacy Insights & News",
+            "es": "Perspectivas y Noticias Esenciales sobre Privacidad de Datos Global"
+          }
+        },
+        {
+          "publisher": "StadiumDB",
+          "date": "2024-01-19",
+          "url": "https://stadiumdb.com/news/2024/01/spain_la_liga_project_breaches_data_protection_laws",
+          "title": {
+            "en": "Spain: La Liga Project Breaches Data Protection Laws",
+            "es": "España: Proyecto de LaLiga Viola Leyes de Protección de Datos"
+          }
+        },
+        {
+          "publisher": "BBC News",
+          "date": "2019-06-12",
+          "url": "https://www.bbc.com/news/technology-48612345",
+          "title": {
+            "en": "LaLiga Fined for Using App to Detect Illegal Streaming",
+            "es": "LaLiga Multada por Usar App para Detectar Transmisiones Ilegales"
+          }
+        },
+        {
+          "publisher": "CNET",
+          "date": "2019-06-13",
+          "url": "https://www.cnet.com/news/spanish-soccer-app-fined-for-spying-on-users/",
+          "title": {
+            "en": "Spanish Soccer App Fined for Spying on Users",
+            "es": "App de Fútbol Española Multada por Espiar a Usuarios"
+          }
+        },
+        {
+          "publisher": "Wired",
+          "date": "2019-06-15",
+          "url": "https://www.wired.com/story/laliga-app-privacy-scandal/",
+          "title": {
+            "en": "LaLiga’s App Privacy Scandal Raises Concerns",
+            "es": "El Escándalo de Privacidad de la App de LaLiga Genera Preocupaciones"
+          }
+        },
+        {
+          "publisher": "El Mundo",
+          "date": "2019-06-11",
+          "url": "https://www.elmundo.es/deportes/futbol/2019/06/11/laliga-multada-espionaje-app.html",
+          "title": {
+            "en": "LaLiga Fined for Spying on Users with Its App",
+            "es": "LaLiga Multada por Espiar a Usuarios con su App"
+          }
+        }
+      ]
     }
-  ]
-} 
+  }

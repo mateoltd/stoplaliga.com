@@ -17,14 +17,20 @@ export const getDictionary = async (locale: Language) => {
       sources(),
     ]);
 
-    const processedSources = {
-      title: sourcesDictionary.title[locale],
-      subtitle: sourcesDictionary.subtitle[locale],
-      entries: sourcesDictionary.entries.map((entry: any) => ({
-        ...entry,
-        title: entry.title[locale],
-      })),
-    };
+    const processedSources: { [key: string]: any } = {};
+    for (const topic in sourcesDictionary) {
+      if (Object.prototype.hasOwnProperty.call(sourcesDictionary, topic)) {
+        const sourceTopic = sourcesDictionary[topic as keyof typeof sourcesDictionary];
+        processedSources[topic] = {
+          title: sourceTopic.title[locale],
+          subtitle: sourceTopic.subtitle[locale],
+          entries: sourceTopic.entries.map((entry: any) => ({
+            ...entry,
+            title: entry.title[locale],
+          })),
+        };
+      }
+    }
 
     return {
       ...languageDictionary,

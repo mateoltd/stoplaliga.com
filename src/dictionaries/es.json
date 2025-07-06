@@ -65,5 +65,41 @@
         "impact": "La internet española sigue siendo interrumpida regularmente, afectando a millones de usuarios legítimos."
       }
     }
+  },
+  "otherPractices": {
+    "title": "Un Historial de Polémicas",
+    "subtitle": "No es la primera vez que las acciones de LaLiga son cuestionadas. A continuación se presentan resúmenes de otros casos notables.",
+    "cases": [
+      {
+        "title": "La App Espía",
+        "abstract": "En 2018, se descubrió que la aplicación móvil de LaLiga usaba los micrófonos y el GPS de los usuarios para espiar a bares que retransmitían partidos ilegalmente. Esto resultó en una multa de 250.000 € por el RGPD, que luego fue anulada, pero la práctica fue ampliamente condenada como una violación de la privacidad.",
+        "linkText": "Leer la historia completa"
+      },
+      {
+        "title": "Vigilancia Biométrica",
+        "abstract": "En 2023, LaLiga se enfrentó a una multa de 1 millón de euros por implementar reconocimiento facial en los estadios sin una evaluación de impacto de protección de datos adecuada, lo que generó preocupaciones sobre la vigilancia masiva de los aficionados.",
+        "linkText": "Leer la historia completa"
+      }
+    ]
+  },
+  "controversiesPage": {
+    "title": "Un Historial de Polémicas",
+    "backLink": "Volver a la cronología",
+    "cases": [
+      {
+        "title": "Vigilancia a través de la App de LaLiga (2018-2019)",
+        "emoji": "🕵️",
+        "content": "En 2018, LaLiga actualizó su aplicación móvil, utilizada por millones de usuarios, para incluir una función que activaba el micrófono del teléfono para detectar la retransmisión no autorizada de partidos de fútbol en lugares públicos como bares y restaurantes. Esta funcionalidad utilizaba tecnología de huella digital de audio para identificar las retransmisiones de partidos y la combinaba con datos de ubicación para señalar los locales sin licencia. En junio de 2019, la Agencia Española de Protección de Datos (AEPD) multó a LaLiga con 250.000 € por infringir el Reglamento General de Protección de Datos (RGPD).\n\nLa AEPD determinó que LaLiga no informó claramente a los usuarios sobre el uso de sus micrófonos y datos de ubicación, incumpliendo las normas de transparencia (artículo 5.1, RGPD) y el derecho a retirar el consentimiento (artículo 7.3, RGPD). La agencia exigió a LaLiga que mostrara una notificación, como un icono, cada vez que se activara el micrófono. LaLiga argumentó que la app solo capturaba una pequeña parte del audio (0,75%) como huella digital, no conversaciones, y que los usuarios daban su consentimiento durante la instalación. Apelaron la multa y desactivaron la función el 30 de junio de 2019.",
+        "image": "mic",
+        "funnyComment": "[Insertar comentario gracioso que no se me ha ocurrido aún]"
+      },
+      {
+        "title": "Uso de datos biométricos en estadios sin evaluación de impacto (2023–2025)",
+        "emoji": "🏟️",
+        "content": "A partir de 2023, LaLiga introdujo sistemas de reconocimiento facial en algunos estadios para controlar el acceso y hacer frente a la violencia, el racismo y la intolerancia, según lo dispuesto por la Comisión Antiviolencia y el Consejo Superior de Deportes (CSD) de España. En marzo de 2025, la AEPD multó a LaLiga con 1 millón de euros por no realizar una Evaluación de Impacto relativa a la Protección de Datos (EIPD) antes de utilizar datos biométricos, incumpliendo los requisitos del RGPD.\n\nLa AEPD declaró que LaLiga, como responsable del tratamiento, no evaluó los riesgos para la privacidad de los espectadores. La multa incluía la orden de suspender el tratamiento de datos biométricos hasta que se completara una EIPD. LaLiga recurrió, argumentando que los clubes, y no LaLiga, gestionaban los datos biométricos y que los sistemas eran requeridos por el CSD y la Comisión Antiviolencia.\n\nHicieron referencia a la sentencia del Tribunal Supremo de 2024 a su favor en el caso de la app para impugnar la decisión de la AEPD. Esta controversia plantea preocupaciones sobre la privacidad en los espacios públicos, ya que la recopilación de datos biométricos afecta a todos los asistentes al estadio.",
+        "image": "eye",
+        "funnyComment": "¡Sonríe! Estás en la cámara de LaLiga."
+      }
+    ]
   }
 } 

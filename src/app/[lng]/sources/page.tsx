@@ -12,11 +12,15 @@ interface Source {
   url: string;
 }
 
+interface SourceTopic {
+  title: string;
+  subtitle: string;
+  entries: Source[];
+}
+
 interface SourcesDict {
   sources: {
-    title: string;
-    subtitle: string;
-    entries: Source[];
+    [topic: string]: SourceTopic;
   };
 }
 
@@ -48,25 +52,22 @@ export default function SourcesPage({ params: paramsPromise }: { params: Promise
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString(lng === 'es' ? 'es-ES' : 'en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString(lng === 'es' ? 'es-ES' : 'en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   };
 
   return (
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Header */}
-      <div className="border-b-4 border-red-500 p-8">
-        <div className="flex justify-between items-start mb-6">
+      <div className="border-b-4 border-red-500 p-8 sticky top-0 bg-black/80 backdrop-blur-sm z-10">
+        <div className="flex justify-between items-start">
           <div>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider mb-4">
-              {dict.sources.title}
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider">
+              {lng === 'es' ? 'Fuentes' : 'Sources'}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
-              {dict.sources.subtitle}
-            </p>
           </div>
           <LanguageSwitcher currentLanguage={lng} />
         </div>
@@ -74,26 +75,39 @@ export default function SourcesPage({ params: paramsPromise }: { params: Promise
 
       {/* Sources List */}
       <div className="p-8">
-        <div className="space-y-8">
-          {dict.sources.entries.map((source, index) => (
-            <a
-              key={index}
-              href={source.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-900 border-2 border-gray-700 p-6 hover:border-red-500 transition-all duration-200 hover:shadow-lg hover:shadow-red-500/20 group"
-            >
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-red-100 transition-colors">
-                {source.title}
-              </h3>
-              <div className="flex items-center text-sm text-gray-400">
-                <span className="font-semibold">{source.publisher}</span>
-                <span className="mx-2 text-red-500">|</span>
-                <span>{formatDate(source.date)}</span>
+        {Object.keys(dict.sources).map((topicKey) => {
+          const topic = dict.sources[topicKey];
+          return (
+            <section key={topicKey} className="mb-16">
+              <div className="border-l-4 border-red-500 pl-4 mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  {topic.title}
+                </h2>
+                <p className="text-lg text-gray-400">{topic.subtitle}</p>
               </div>
-            </a>
-          ))}
-        </div>
+              <div className="space-y-8">
+                {topic.entries.map((source, index) => (
+                  <a
+                    key={index}
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-gray-900 border-2 border-gray-700 p-6 hover:border-red-500 transition-all duration-200 hover:shadow-lg hover:shadow-red-500/20 group"
+                  >
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-red-100 transition-colors">
+                      {source.title}
+                    </h3>
+                    <div className="flex items-center text-sm text-gray-400">
+                      <span className="font-semibold">{source.publisher}</span>
+                      <span className="mx-2 text-red-500">|</span>
+                      <span>{formatDate(source.date)}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
       {/* Footer */}
