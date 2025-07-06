@@ -10,5 +10,59 @@
   },
   "buttons": {
     "learnMore": "Learn More"
+  },
+  "timeline": {
+    "title": "LaLiga and Internet Blocking in Spain",
+    "subtitle": "A timeline of events and their impact on digital infrastructure",
+    "warning": "This is a documented case study. Legal precedents established may influence future digital policy decisions in the EU.",
+    "events": {
+      "2024-12-18": {
+        "title": "LaLiga Gets Legal Approval to Block Websites",
+        "description": "LaLiga received permission from a Barcelona court to ask internet providers (like Movistar, Vodafone, and Orange) to block websites streaming football matches illegally.",
+        "impact": "This set the stage for blocking internet addresses (IPs) used by services hosting pirated content."
+      },
+      "2025-02-09": {
+        "title": "LaLiga Begins Blocking Cloudflare IPs",
+        "description": "LaLiga began blocking internet addresses tied to Cloudflare, a major infrastructure service that provides CDN and security services to websites.",
+        "impact": "The blocks resulted in disruption of thousands of legitimate websites in Spain, including small businesses and government sites.",
+        "why": "Cloudflare provides services to more than 240 million websites globally, representing approximately 20% of the world's web infrastructure."
+      },
+      "2025-02-19": {
+        "title": "Cloudflare Files Legal Challenge",
+        "description": "Cloudflare and RootedCON filed a legal challenge against LaLiga, questioning the proportionality of IP blocks that affected legitimate users and businesses.",
+        "impact": "They argued the blocks were overly broad, affecting critical infrastructure beyond the specific target."
+      },
+      "2025-03-26": {
+        "title": "Cloudflare Loses Appeal",
+        "description": "A court (the same that approved the initial order in December 2024) rejected Cloudflare's appeal, allowing LaLiga to keep blocking IPs.",
+        "impact": "This meant disruptions would continue, especially during football match weekends."
+      },
+      "2025-04-12": {
+        "title": "Vercel Receives Block Notifications",
+        "description": "LaLiga sent notifications to Vercel, a hosting and deployment platform, claiming it was hosting content that infringed copyright.",
+        "impact": "Blocks targeting Vercel's IPs disrupted websites used by developers and businesses utilizing the platform.",
+        "why": "Vercel is a deployment platform used by more than 9 million websites, particularly popular among developers and development teams."
+      },
+      "2025-04-15": {
+        "title": "Vercel Speaks Out",
+        "description": "Vercel's CEO, Guillermo Rauch, publicly criticized the blocks, explaining that they harmed legitimate websites and developers.",
+        "impact": "Vercel reported working with LaLiga to resolve the issue but noted the blocks were overly aggressive."
+      },
+      "2025-05-04": {
+        "title": "Twitch and Others Affected",
+        "description": "LaLiga's blocks hit more platforms, including Twitch, a popular streaming service.",
+        "impact": "IPs for Twitch and other services like Netlify were blocked, causing outages for gamers, developers, and businesses."
+      },
+      "2025-05-20": {
+        "title": "Cloudflare's CEO Warns of Dangers",
+        "description": "Cloudflare's CEO, Matthew Prince, spoke out on X, calling LaLiga's strategy 'bonkers' and warning that blocking critical IPs could harm emergency services and even cost lives.",
+        "impact": "He said Cloudflare is willing to help but wants targeted solutions."
+      },
+      "2025-07-06": {
+        "title": "Blocks Continue, No Major Resolution",
+        "description": "As of today, blocks continue without significant resolution.",
+        "impact": "Spain's internet continues to be regularly disrupted, affecting millions of legitimate users."
+      }
+    }
   }
 } 

@@ -10,5 +10,59 @@
   },
   "buttons": {
     "learnMore": "Saber más"
+  },
+  "timeline": {
+    "title": "LaLiga y los Bloqueos de Internet en España",
+    "subtitle": "Una cronología de los eventos y su impacto en la infraestructura digital",
+    "warning": "Este es un estudio de caso documentado. Los precedentes legales establecidos pueden influir en futuras decisiones de política digital en la UE.",
+    "events": {
+      "2024-12-18": {
+        "title": "LaLiga Obtiene Aprobación Legal para Bloquear Sitios Web",
+        "description": "LaLiga recibió permiso de un tribunal de Barcelona para pedir a los proveedores de internet (como Movistar, Vodafone y Orange) bloquear sitios web que transmiten partidos de fútbol ilegalmente.",
+        "impact": "Esto sentó las bases para bloquear direcciones de internet (IPs) utilizadas por servicios que alojan contenido pirata."
+      },
+      "2025-02-09": {
+        "title": "LaLiga Comienza a Bloquear IPs de Cloudflare",
+        "description": "LaLiga comenzó a bloquear direcciones de internet vinculadas a Cloudflare, un servicio de infraestructura que proporciona CDN y servicios de seguridad a sitios web.",
+        "impact": "Los bloqueos resultaron en la interrupción de miles de sitios web legítimos en España, incluyendo pequeñas empresas y sitios gubernamentales.",
+        "why": "Cloudflare proporciona servicios a más de 240 millones de sitios web globalmente, representando aproximadamente el 20% de la infraestructura web mundial."
+      },
+      "2025-02-19": {
+        "title": "Cloudflare Presenta Recurso Legal",
+        "description": "Cloudflare y RootedCON presentaron un recurso legal contra LaLiga, cuestionando la proporcionalidad de los bloqueos de IP que afectaron a usuarios y empresas legítimas.",
+        "impact": "Argumentaron que los bloqueos eran excesivamente amplios, afectando infraestructura crítica más allá del objetivo específico."
+      },
+      "2025-03-26": {
+        "title": "Cloudflare Pierde la Apelación",
+        "description": "Un tribunal (el mismo que aprobó la orden inicial en diciembre de 2024) rechazó la apelación de Cloudflare, permitiendo a LaLiga continuar bloqueando IPs.",
+        "impact": "Esto significó que las interrupciones continuarían, especialmente durante los fines de semana de partidos de fútbol."
+      },
+      "2025-04-12": {
+        "title": "Vercel Recibe Notificaciones de Bloqueo",
+        "description": "LaLiga envió notificaciones a Vercel, plataforma de hosting y deployment, alegando que alojaba contenido que infringía derechos de autor.",
+        "impact": "Los bloqueos dirigidos a las IPs de Vercel interrumpieron sitios web de desarrolladores y empresas que utilizan la plataforma.",
+        "why": "Vercel es una plataforma de deployment utilizada por más de 9 millones de sitios web, siendo especialmente popular entre desarrolladores y equipos de desarrollo."
+      },
+      "2025-04-15": {
+        "title": "Vercel Alza la Voz",
+        "description": "El CEO de Vercel, Guillermo Rauch, criticó públicamente los bloqueos, explicando que dañaron sitios web y desarrolladores legítimos.",
+        "impact": "Vercel reportó estar trabajando con LaLiga para resolver el problema pero notó que los bloqueos eran excesivamente agresivos."
+      },
+      "2025-05-04": {
+        "title": "Twitch y Otros Afectados",
+        "description": "Los bloqueos de LaLiga afectaron más plataformas, incluyendo Twitch, un servicio de streaming popular.",
+        "impact": "Las IPs de Twitch y otros servicios como Netlify fueron bloqueadas, causando interrupciones para gamers, desarrolladores y empresas."
+      },
+      "2025-05-20": {
+        "title": "El CEO de Cloudflare Advierte de Peligros",
+        "description": "El CEO de Cloudflare, Matthew Prince, habló en X, calificando la estrategia de LaLiga como 'disparatada' y advirtiendo que bloquear IPs críticas podría dañar servicios de emergencia e incluso costar vidas.",
+        "impact": "Dijo que Cloudflare está dispuesta a ayudar pero quiere soluciones específicas."
+      },
+      "2025-07-06": {
+        "title": "Los Bloqueos Continúan, Sin Resolución Mayor",
+        "description": "Hasta la fecha, los bloqueos continúan sin una resolución significativa.",
+        "impact": "La internet española sigue siendo interrumpida regularmente, afectando a millones de usuarios legítimos."
+      }
+    }
   }
 } 

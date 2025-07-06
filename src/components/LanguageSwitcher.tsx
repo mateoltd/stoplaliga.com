@@ -1,0 +1,45 @@
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
+import { type Language } from '@/dictionaries/client';
+
+interface LanguageSwitcherProps {
+  currentLanguage: Language;
+}
+
+export default function LanguageSwitcher({ currentLanguage }: LanguageSwitcherProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const switchLanguage = (newLang: Language) => {
+    // Replace the language part of the URL
+    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLang}`);
+    router.push(newPath);
+  };
+
+  return (
+    <div className="flex items-center space-x-1 bg-gray-900 border border-gray-700 rounded-none">
+      <button
+        onClick={() => switchLanguage('es')}
+        className={`px-3 py-2 text-sm font-mono uppercase transition-colors ${
+          currentLanguage === 'es'
+            ? 'bg-red-600 text-white'
+            : 'text-gray-400 hover:text-white hover:bg-gray-800'
+        }`}
+      >
+        ES
+      </button>
+      <div className="w-px h-6 bg-gray-700"></div>
+      <button
+        onClick={() => switchLanguage('en')}
+        className={`px-3 py-2 text-sm font-mono uppercase transition-colors ${
+          currentLanguage === 'en'
+            ? 'bg-red-600 text-white'
+            : 'text-gray-400 hover:text-white hover:bg-gray-800'
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
