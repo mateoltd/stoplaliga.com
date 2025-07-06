@@ -101,8 +101,8 @@ export default function TimelinePage({ params: paramsPromise }: { params: Promis
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Header */}
       <div className="border-b-4 border-red-500 p-8">
-        <div className="flex justify-between items-start mb-6">
-          <div>
+        <div className="flex justify-between items-start gap-4 mb-6">
+          <div className="flex-1 min-w-0">
             <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider mb-4">
               {dict.timeline.title}
             </h1>

@@ -63,8 +63,8 @@ export default function SourcesPage({ params: paramsPromise }: { params: Promise
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Header */}
       <div className="border-b-4 border-red-500 p-8 sticky top-0 bg-black/80 backdrop-blur-sm z-10">
-        <div className="flex justify-between items-start">
-          <div>
+        <div className="flex justify-between items-start gap-4">
+          <div className="flex-1 min-w-0">
             <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider">
               {lng === 'es' ? 'Fuentes' : 'Sources'}
             </h1>
