@@ -23,6 +23,8 @@ export default function LanguageSwitcher({ currentLanguage }: LanguageSwitcherPr
     <div className="flex items-center space-x-1 bg-gray-900 border border-gray-700 rounded-none">
       <button
         onClick={() => switchLanguage('es')}
+        aria-label="Switch to Spanish"
+        aria-pressed={currentLanguage === 'es'}
         className={`px-3 py-2 text-sm font-mono uppercase transition-colors ${
           currentLanguage === 'es'
             ? 'bg-red-600 text-white'
@@ -34,6 +36,8 @@ export default function LanguageSwitcher({ currentLanguage }: LanguageSwitcherPr
       <div className="w-px h-6 bg-gray-700"></div>
       <button
         onClick={() => switchLanguage('en')}
+        aria-label="Switch to English"
+        aria-pressed={currentLanguage === 'en'}
         className={`px-3 py-2 text-sm font-mono uppercase transition-colors ${
           currentLanguage === 'en'
             ? 'bg-red-600 text-white'
