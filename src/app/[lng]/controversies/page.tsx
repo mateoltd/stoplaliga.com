@@ -28,6 +28,7 @@ export default function ControversiesPage({ params: paramsPromise }: { params: P
   const [lng, setLng] = useState<Language>('es');
   const [activeIndex, setActiveIndex] = useState(0);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function ControversiesPage({ params: paramsPromise }: { params: P
         sectionRefs.current = Array(dictionary.controversiesPage.cases.length).fill(null);
       } catch (error) {
         console.error('Failed to load page content:', error);
+        setError('Failed to load content. Please try refreshing the page.');
       }
     };
     loadContent();
@@ -91,6 +93,17 @@ export default function ControversiesPage({ params: paramsPromise }: { params: P
       }
     };
   }, [dict]);
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-black text-white font-mono flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-2xl text-red-500 font-bold">Error Loading Page</p>
+          <p className="text-lg mt-2">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!dict) {
     return (
