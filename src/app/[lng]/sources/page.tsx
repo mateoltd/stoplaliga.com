@@ -27,6 +27,7 @@ interface SourcesDict {
 export default function SourcesPage({ params: paramsPromise }: { params: Promise<{ lng: Language }> }) {
   const [dict, setDict] = useState<SourcesDict | null>(null);
   const [lng, setLng] = useState<Language>('es');
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const loadContent = async () => {
@@ -37,10 +38,21 @@ export default function SourcesPage({ params: paramsPromise }: { params: Promise
         setDict(dictionary);
       } catch (error) {
         console.error('Failed to load page content:', error);
+        setError(error as Error);
       }
     };
     loadContent();
   }, [paramsPromise]);
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-black text-white font-mono flex items-center justify-center">
+        <div className="text-red-500 text-2xl">
+          {lng === 'es' ? 'Error al cargar el contenido.' : 'Error loading content.'}
+        </div>
+      </div>
+    );
+  }
 
   if (!dict) {
     return (
@@ -52,6 +64,9 @@ export default function SourcesPage({ params: paramsPromise }: { params: Promise
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
+    if (isNaN(date.getTime())) {
+      return lng === 'es' ? 'Fecha no válida' : 'Invalid Date';
+    }
     return date.toLocaleDateString(lng === 'es' ? 'es-ES' : 'en-US', {
       year: 'numeric',
       month: 'long',
