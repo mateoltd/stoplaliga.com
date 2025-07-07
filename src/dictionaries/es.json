@@ -90,7 +90,7 @@
         "title": "Vigilancia a través de la App de LaLiga (2018-2019)",
         "content": "En 2018, LaLiga actualizó su aplicación móvil, utilizada por millones de usuarios, para incluir una función que activaba el micrófono del teléfono para detectar la retransmisión no autorizada de partidos de fútbol en lugares públicos como bares y restaurantes. Esta funcionalidad utilizaba tecnología de huella digital de audio para identificar las retransmisiones de partidos y la combinaba con datos de ubicación para señalar los locales sin licencia. En junio de 2019, la Agencia Española de Protección de Datos (AEPD) multó a LaLiga con 250.000 € por infringir el Reglamento General de Protección de Datos (RGPD).\n\nLa AEPD determinó que LaLiga no informó claramente a los usuarios sobre el uso de sus micrófonos y datos de ubicación, incumpliendo las normas de transparencia (artículo 5.1, RGPD) y el derecho a retirar el consentimiento (artículo 7.3, RGPD). La agencia exigió a LaLiga que mostrara una notificación, como un icono, cada vez que se activara el micrófono. LaLiga argumentó que la app solo capturaba una pequeña parte del audio (0,75%) como huella digital, no conversaciones, y que los usuarios daban su consentimiento durante la instalación. Apelaron la multa y desactivaron la función el 30 de junio de 2019.",
         "image": "mic",
-        "funnyComment": "[Insertar comentario gracioso que no se me ha ocurrido aún]"
+        "funnyComment": "Tu micrófono está escuchando... pero solo para proteger el fútbol, ¿verdad?"
       },
       {
         "title": "Uso de datos biométricos en estadios sin evaluación de impacto (2023–2025)",
