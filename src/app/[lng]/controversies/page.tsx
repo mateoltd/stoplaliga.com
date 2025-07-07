@@ -47,10 +47,20 @@ export default function ControversiesPage({ params: paramsPromise }: { params: P
 
   const showToast = (message: string) => {
     setToastMessage(message);
-    setTimeout(() => {
+  };
+
+  // Automatically clear toast after 3 seconds and clean up on unmount
+  useEffect(() => {
+    if (!toastMessage) return;
+
+    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
       setToastMessage(null);
     }, 3000);
-  };
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [toastMessage]);
 
   useEffect(() => {
     if (!dict) return;
