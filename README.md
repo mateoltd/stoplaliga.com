@@ -1,17 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stop LaLiga
+This project aims to document and raise awareness about the controversies surrounding LaLiga's actions related to internet blocking and data privacy. It highlights a timeline of events impacting digital infrastructure and user privacy in Spain.
+
+## Features
+
+- **Multilingual Support**: Available in English and Spanish, powered by Next.js internationalization.
+- **Controversies Timeline**: A detailed timeline of LaLiga's actions and their impact.
+- **Additional Cases**: Information on other notable controversies involving LaLiga.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
