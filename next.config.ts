@@ -54,10 +54,6 @@ const nextConfig: NextConfig = {
 
   // Trailing slash for consistency
   trailingSlash: false,
-
-  experimental: {
-    optimizeCss: true,
-  },
 };
 
 export default nextConfig;
