@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://stoplaliga.com/sitemap.xml
+
+# Allow all crawlers to access internationalized content
+# Root URLs serve content via content negotiation based on Accept-Language
+Allow: /
+Allow: /controversies
+Allow: /sources
+Allow: /es/
+Allow: /en/
+
+# Disallow crawling of any potential development or admin paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Crawl delay for polite crawling
+Crawl-delay: 1 

@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-// Define supported locales (Spanish as primary, English as secondary)
 export const locales = ['es', 'en'];
 export const defaultLocale = 'es';
 
@@ -18,7 +17,6 @@ function getLocale(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const response = NextResponse.next(); // Prepare a response object early
 
   // 1. Check if pathname already has a supported locale prefix
   const pathnameHasLocale = locales.some(
@@ -26,37 +24,28 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) {
+    // Path already has locale prefix, continue normally
     const currentLocale = pathname.split('/')[1] || defaultLocale;
+    const response = NextResponse.next();
     response.headers.set('x-language', currentLocale);
-    return response; // Continue without redirect
+    return response;
   }
 
-  // 2. Handle the root path explicitly for SEO and default content
+  // 2. Handle paths without locale prefix
   const preferredLocale = getLocale(request);
-  response.headers.set('x-language', preferredLocale);
-
-  if (pathname === '/') {
-    if (preferredLocale === defaultLocale) {
-      // Serve default locale content directly at root, no redirect needed
-      // The `x-language` header is set for RootLayout
-      return response;
-    } else {
-      // Redirect to preferred non-default locale path
-      request.nextUrl.pathname = `/${preferredLocale}`;
-      return NextResponse.redirect(request.nextUrl);
-    }
-  }
   
-  // 3. Redirect other paths that are missing a locale prefix
-  request.nextUrl.pathname = `/${preferredLocale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  const rewriteUrl = new URL(`/${preferredLocale}${pathname}`, request.url);
+  const response = NextResponse.rewrite(rewriteUrl);
+  response.headers.set('x-language', preferredLocale);
+  
+  response.headers.set('Vary', 'Accept-Language');
+  
+  return response;
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, api, static, public files like favicon.ico)
-    '/((?!_next|api|static|.*\\..*|favicon.ico).*)',
-    // Include the root path explicitly if not covered by the above
+    '/((?!_next|api|static|.*\\..*|favicon.ico|robots.txt|sitemap.xml).*)',
     '/',
   ],
 }; 

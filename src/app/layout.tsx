@@ -15,8 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = getSeoMetadata("es");
-
+// Generate metadata dynamically based on the current locale
+export async function generateMetadata(): Promise<Metadata> {
+  const headerList = await headers();
+  const lang = headerList.get("x-language") || defaultLocale;
+  const locale = lang === "en" ? "en" : "es";
+  return getSeoMetadata(locale);
+}
 
 export default async function RootLayout({
   children,
